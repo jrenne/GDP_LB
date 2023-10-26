@@ -33,19 +33,14 @@ Filter.matrix <- matrix(0,length(Filter),2)
 rownames(Filter.matrix) <- rownames(Full.Theta)
 
 # When jj odd number
-param.2.estim <- c("phi","delta","b","sigma.y","sigma.d")
+param.2.estim <- c("phi","delta","b","sigma.y","sigma.d",
+                   "g_cl","g_ci","g_ch","p_ll","p_hh","p_ii","p_il",
+                   "pi.bar","psi","sigma.pi","rho.pi")
 Filter.matrix[param.2.estim,1] <- 1
-if(indic.estim.distri == 1){
-  param.2.estim <- c("g_cl","g_ci","g_ch","p_ll","p_hh","p_ii","p_il")
-  Filter.matrix[param.2.estim,1] <- 1
-}
-if(indic.include.nominal == 1){
-  param.2.estim <- c("pi.bar","psi","sigma.pi","rho.pi")
-  Filter.matrix[param.2.estim,1] <- 1
-}
 
 # When jj even number
-param.2.estim <- c("phi","delta","b","sigma.y","sigma.d")
+param.2.estim <- c("phi","delta","b","sigma.y","sigma.d",
+                   "g_cl","g_ci","g_ch")
 Filter.matrix[param.2.estim,2] <- 1
 
 # Run numerical optimization:

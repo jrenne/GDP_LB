@@ -1,18 +1,18 @@
-Mean of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.65&0.67\\
-Mean of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.47&0.67\\
-Mean of inflation $\pi_t$&$\times 10^{2}$&&0.54&0.53\\
-Std. dev. of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.57&0.58\\
-Std. dev. of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.48&0.58\\
-Std. dev. of inflation $\pi_t$&$\times 10^{2}$&&0.24&0.12\\
+Mean of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.65&0.59\\
+Mean of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.47&0.59\\
+Mean of inflation $\pi_t$&$\times 10^{2}$&&0.54&0.57\\
+Std. dev. of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.57&0.54\\
+Std. dev. of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.48&0.54\\
+Std. dev. of inflation $\pi_t$&$\times 10^{2}$&&0.24&0.21\\
 \hline
-Skewness of consumption growth rate $\Delta c_t$&&&--1.61&-0..1\\
-Kurtosis of consumption growth rate $\Delta c_t$&&&11.14&3.21\\
-Mean of short-term nom. rate&$\times 10^{2}$&&2.32&2.94\\
-Mean of 10-year nom. rate&$\times 10^{2}$&&5.43&4.16\\
-Mean of 30-year nom. rate&$\times 10^{2}$&&5.77&5.87\\
-Std. dev. of short-term nom. rate&$\times 10^{2}$&&2.17&2.61\\
-Std. dev. of 10-year nom. rate&$\times 10^{2}$&&2.33&2.11\\
-Std. dev. of 30-year nom. rate&$\times 10^{2}$&&1.95&1.73\\
-Auto-correl. of short-term nom. rate&&&0.99&0.84\\
+Skewness of consumption growth rate $\Delta c_t$&&&--1.61&-0.00\\
+Kurtosis of consumption growth rate $\Delta c_t$&&&11.14&3.01\\
+Mean of short-term nom. rate&$\times 10^{2}$&&2.32&2.57\\
+Mean of 10-year nom. rate&$\times 10^{2}$&&5.43&4.20\\
+Mean of 30-year nom. rate&$\times 10^{2}$&&5.77&6.11\\
+Std. dev. of short-term nom. rate&$\times 10^{2}$&&2.17&2.33\\
+Std. dev. of 10-year nom. rate&$\times 10^{2}$&&2.33&2.28\\
+Std. dev. of 30-year nom. rate&$\times 10^{2}$&&1.95&1.66\\
+Auto-correl. of short-term nom. rate&&&0.99&0.96\\
 Auto-correl. of 10-year nom. rate&&&0.99&0.97\\
-Auto-correl. of 30-year nom. rate&&&0.98&0.98\\
+Auto-correl. of 30-year nom. rate&&&0.98&0.97\\

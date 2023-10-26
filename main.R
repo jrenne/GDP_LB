@@ -19,11 +19,15 @@ par(plt=c(.1,.9,.1,.9)) # set initial margins for plots
 # SETTINGS ---------------------------------------------------------------------
 
 # Numerical optimization (1) of moments or not (0)?
-indic.estim <- 0
+indic.estim <- 1
 indic.save.results.if.estim <- 1 # save results if estimation? (1 = Yes)
+
+# Produce Latex outputs:
+indic.produce.Latex.outputs <- 1
 
 # Run debt simulations (1) or not (0)?
 indic.debt.simulations <- 1
+
 
 # if estimation: ---------------------------------------------------------------
 weight.historical.fit <- .5 # if >0, then the goodness of fit is taken into account
@@ -38,8 +42,6 @@ max.abs.value.params <- 20
 # Explanation: changes in variable are such that paramrters larger
 # than max.abs.value.params are either very large or very close to specified bounds.
 
-# Produce Latex outputs:
-indic.produce.Latex.outputs <- 1
 
 # Folders for figures and tables:
 output.figures.folder <- "prepare_outputs/PDF_Figures"
@@ -97,10 +99,8 @@ source('estimation/list_moments_2B_fitted.R')
 # ==============================================================================
 
 
-
 # ==============================================================================
 # Approximation settings (the model is solved by grid-based approaches):
-NB.values.s <- 100 # number of discretized values of s
 NB.values.s <- 50 # number of discretized values of s
 CURVATURE   <- 20  # the discretized values of s are selected linaerly, this parameter determines the non-linearity of discretized values of s
 # ==============================================================================
@@ -168,8 +168,6 @@ if(indic.produce.Latex.outputs == 1){
 
 if(indic.debt.simulations == 1){
   
-  #setwd("prepare_outputs/LatexPlots")
-  
   # ----------------------------------------------------------------------------
   # Run script computing conditional pdf of debt-to-GDP ratios:
   
@@ -186,7 +184,7 @@ if(indic.debt.simulations == 1){
   horizons.used.4.plots <- c(8,80) # Horizons considered, expressed in number of model periods
   
   N.sim <- 10000 # number of simulations
-  N.sim <- 200 # number of simulations
+  #N.sim <- 200 # number of simulations
   
   source('simulations/run.debt.dyn_PDFs.R')
   
@@ -200,7 +198,7 @@ if(indic.debt.simulations == 1){
   vector.of.weights <- 0:1 # relative importances of Nom/ILB/GDP-LB
   
   nb.periods <- 40000 # number of simulated periods
-  nb.periods <- 1000 # number of simulated periods
+  #nb.periods <- 1000 # number of simulated periods
   
   ini.debt.to.GDP <- 400 # expressed in GDP percent. Caution: GDP is nominal GDP for one model period
 
