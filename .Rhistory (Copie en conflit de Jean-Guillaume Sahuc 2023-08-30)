@@ -1,0 +1,512 @@
+Filter <- rep(1,length(Full.Theta))
+max.criteria <- compute.criteria(Full.Theta,
+vec.maturities = vec.maturities.4.estimation,
+nb.values.s = NB.values.s,
+h.stock = H.stock,
+curvature = CURVATURE,
+grid.4.S = NaN,
+indic.the.ones.used.in.nom.curve = indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve = indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve = indic.slope.nom.curve,
+indic.slope.rea.curve = indic.slope.rea.curve,
+indic.condVar.nom.rate = indic.condVar.nom.rate,
+indic.condVar.rea.rate = indic.condVar.rea.rate,
+all.targets,
+all.weights)
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Theta.0 <- Theta.ini
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Model <- Theta.2.Model(Theta)
+modelled.moments <- compare.target.and.model(Model,
+vec.maturities, # maturities considered (expressed in number of model periods)
+nb.values.s,
+h.stock,
+curvature,
+grid.4.S,
+indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve,
+indic.slope.rea.curve,
+indic.condVar.nom.rate,
+indic.condVar.rea.rate)
+nb.values.s <- 50
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Model <- Theta.2.Model(Theta)
+modelled.moments <- compare.target.and.model(Model,
+vec.maturities, # maturities considered (expressed in number of model periods)
+nb.values.s,
+h.stock,
+curvature,
+grid.4.S,
+indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve,
+indic.slope.rea.curve,
+indic.condVar.nom.rate,
+indic.condVar.rea.rate)
+grid.4.S <- NaN
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Model <- Theta.2.Model(Theta)
+modelled.moments <- compare.target.and.model(Model,
+vec.maturities, # maturities considered (expressed in number of model periods)
+nb.values.s,
+h.stock,
+curvature,
+grid.4.S,
+indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve,
+indic.slope.rea.curve,
+indic.condVar.nom.rate,
+indic.condVar.rea.rate)
+curvature <- CURVATURE
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Model <- Theta.2.Model(Theta)
+modelled.moments <- compare.target.and.model(Model,
+vec.maturities, # maturities considered (expressed in number of model periods)
+nb.values.s,
+h.stock,
+curvature,
+grid.4.S,
+indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve,
+indic.slope.rea.curve,
+indic.condVar.nom.rate,
+indic.condVar.rea.rate)
+vec.maturities.4.estimation
+vec.maturities = vec.maturities.4.estimation
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Model <- Theta.2.Model(Theta)
+modelled.moments <- compare.target.and.model(Model,
+vec.maturities, # maturities considered (expressed in number of model periods)
+nb.values.s,
+h.stock,
+curvature,
+grid.4.S,
+indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve,
+indic.slope.rea.curve,
+indic.condVar.nom.rate,
+indic.condVar.rea.rate)
+h.stock = H.stock
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Model <- Theta.2.Model(Theta)
+modelled.moments <- compare.target.and.model(Model,
+vec.maturities, # maturities considered (expressed in number of model periods)
+nb.values.s,
+h.stock,
+curvature,
+grid.4.S,
+indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve,
+indic.slope.rea.curve,
+indic.condVar.nom.rate,
+indic.condVar.rea.rate)
+Model$p_h
+Model$p_l
+Model
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+Model$g_c
+Filter <- rep(1,length(Full.Theta))
+max.criteria <- compute.criteria(Full.Theta,
+vec.maturities = vec.maturities.4.estimation,
+nb.values.s = NB.values.s,
+h.stock = H.stock,
+curvature = CURVATURE,
+grid.4.S = NaN,
+indic.the.ones.used.in.nom.curve = indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve = indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve = indic.slope.nom.curve,
+indic.slope.rea.curve = indic.slope.rea.curve,
+indic.condVar.nom.rate = indic.condVar.nom.rate,
+indic.condVar.rea.rate = indic.condVar.rea.rate,
+all.targets,
+all.weights)
+vec.maturities = vec.maturities.4.estimation
+nb.values.s = NB.values.s
+h.stock = H.stock
+curvature = CURVATURE
+grid.4.S = NaN
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Filter
+sum(Filter)
+Theta.0 <- Full.Theta
+Theta <- Full.Theta
+Theta[Filter==1] <- Theta.0
+Model <- Theta.2.Model(Theta)
+modelled.moments <- compare.target.and.model(Model,
+vec.maturities, # maturities considered (expressed in number of model periods)
+nb.values.s,
+h.stock,
+curvature,
+grid.4.S,
+indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve,
+indic.slope.rea.curve,
+indic.condVar.nom.rate,
+indic.condVar.rea.rate)
+all.targets
+modelled.moments
+all.target.names
+length(all.targets)
+p_star <- (1-Model$p_h)/(2-Model$p_h-Model$p_l)
+p_star
+p_star <- (1-Model$p_h)/(2-Model$p_h-Model$p_l)
+modelled.E.dc <- sum(Model$g_c * c(p_star,1-p_star))
+modelled.E.dc
+p_star
+Model$g_c
+all.target.names
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/procedures/set.of.procedures.macrofinance.model.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/show.outputs.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+Theta.est
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/show.outputs.R", echo=TRUE)
+Model$p_l
+Model$p_l <- .0001
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+Model$g_c
+Model$p_l
+Model$p_h
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/load.ini.model.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+par(mfrow=c(1,2))
+plot(vec.maturities.postestim/Model$freq,
+res.all.moments$mean.nom.yields,type="l",ylim=c(0,.08))
+lines(vec.maturities.postestim/Model$freq,
+res.all.moments$mean.rea.yields,col="red")
+lines(vec.maturities.postestim/Model$freq,
+res.all.moments$mean.GDP.yields,col="blue")
+plot(res.prices$values.S,res.prices$Chi/Model$freq,type="l")
+plot(res.prices$Model.solved$mu,res.prices$Chi/Model$freq,type="l")
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+plot(exp(res.prices$Model.solved$mu),res.prices$Chi/Model$freq,type="l")
+plot(exp(res.prices$Model.solved$mu),res.prices$Chi/Model$freq)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/run.estim.nu.distri.R", echo=TRUE)
+AUX <- density(dc.h.demeaned[!is.na(dc.h.demeaned)])
+plot(AUX,type="l",
+xlab=expression(nu[t]),ylab="",main="",
+ylim=c(0,1.2*max(AUX$y)),yaxt="n")
+AUX <- density(dc.sim.h[!is.na(dc.sim.h)])
+xx <- AUX$x
+yy <- AUX$y
+NNN <- length(xx)
+polygon(c(xx,xx[NNN:1]),
+c(yy,0*yy[NNN:1]),
+col=rgb(0,0,0,alpha=0.2),border="dark grey")
+# ==============================================================================
+# TAMING DEBT: CAN GDP-LINKED BONDS DO THE TRICK?
+#
+# Sarah Mouabbi, Jean-Paul Renne, Jean-Guillaume Sahuc
+#
+# This version: May 2020.
+# ==============================================================================
+# Clear environment and console
+rm(list = ls(all = TRUE)) # clear environment
+cat("\014") # clear console
+par(plt=c(.1,.9,.1,.9)) # set initial margins for plots
+# ==============================================================================
+# SETTINGS ---------------------------------------------------------------------
+# Numerical optimization (1) of moments or not (0)?
+indic.estim <- 0
+indic.save.results.if.estim <- 1
+# Run debt simulations (1) or not (0)?
+indic.debt.simulations <- 0
+# if estimation: ---------------------------------------------------------------
+indic.include.nominal        <- 1 # if 0 then moments associated with nominal bonds are not taken into account
+indic.estim.distri.by.kappas <- 1 # if 1, then p, eta and sigma are estimated by cumulant fitting
+indic.estim.distri           <- 0 # if 1, then estimate distri with other params
+indic.full.estim <- 1 # if different from 1, then the optim algo directly uses all parameters
+# Numerical optimization settings (see in run.aux.estim.R for details):
+nb.loops      <- 6
+nb.sub.loops  <- 1
+mult.fact     <- 1
+MAXIT.NM      <- 100
+MAXIT.nlminb  <- 5
+# Set maximum value of estimated param:
+max.abs.value.params <- 20
+# Explanation: changes in variable are such that paramrters larger
+# than max.abs.value.params are either very large or very close to specified bounds.
+# Produce Latex outputs:
+indic.produce.Latex.outputs <- 1
+# ==============================================================================
+# ==============================================================================
+# Load libraries:
+library(mFilter) # HP filter
+library(optimx)
+library(stringr)
+library(expm)
+library(tseries)
+library(tikzDevice)
+library(Rcpp)
+library(RcppEigen)
+# Load procedures:
+source('procedures/set.of.procedures.macrofinance.model.R')
+source('procedures/set.of.procedures.DebtDyn.R')
+source('procedures/set.of.procedures.dc.distri.R')
+source('procedures/set.of.procedures.DebtDyn.R')
+sourceCpp("procedures/Cpp.cpp") # load C++ procedures
+# ==============================================================================
+# ==============================================================================
+# Estimation sample
+# Sample used for financial data:
+start_Y <- 1985
+end_Y<- 2018
+start_q <- 1 # Quarter
+end_q<- 1
+indic.same.dates.4.macro.fi <- 1
+# if = 1, then uses the same sample dates for macro and financial data
+#      otherwise, macro sample:
+first.date.macro <- as.Date("01.01.1985","%d.%m.%Y")
+last.date.macro  <- as.Date("01.01.2018","%d.%m.%Y")
+H.stock <- 4 # holding period for stocks
+# Choose (initial) model calibration:
+#    (if indic.load.Wachter=0 and indic.load.CC=0, then use last estimated model -- see load.ini.model.R)
+indic.load.Wachter <- 0
+indic.load.CC      <- 0
+# ==============================================================================
+# ==============================================================================
+# Load initial model:
+result.file <- "results_Main"
+source('estimation/load.ini.model.R')
+# Load dataset:
+source('estimation/load.data.R')
+d.c
+dc.US
+roll.wind <- 20
+rolling.correl <- rep(NaN,length(dy.US))
+for(t in roll.wind:length(dy.US)){
+rolling.correl[t] <- cor(dc.US[(t-rolling.correl+1):t],pi.US[(t-rolling.correl+1):t])
+}
+rolling.correl
+roll.wind <- 20
+rolling.correl <- rep(NaN,length(dy.US))
+for(t in roll.wind:length(dy.US)){
+rolling.correl[t] <- cor(dc.US[(t-roll.wind+1):t],pi.US[(t-roll.wind+1):t])
+}
+plot(rolling.correl)
+plot(rolling.correl,type="l")
+plot(rolling.correl,type="l")
+abline(h=0,col="grey")
+macro.data$date
+plot(macro.data$date[indic.first.date:indic.last.date],
+rolling.correl,type="l")
+abline(h=0,col="grey")
+macro.data <- read.csv2("data/macro_data.csv", sep=";")
+macro.data$date <- as.Date(macro.data$date,"%d.%m.%Y")
+indic.first.date
+indic.first.date <- 1
+dy.US <- log(macro.data$GDP.US[indic.first.date:indic.last.date]/
+macro.data$GDP.US[(indic.first.date-1):(indic.last.date-1)])
+dc.US <- log(macro.data$CONSO.NONDUR.US[indic.first.date:indic.last.date]/
+macro.data$CONSO.NONDUR.US[(indic.first.date-1):(indic.last.date-1)])
+pi.US<- log(macro.data$GDPDEF.US[indic.first.date:indic.last.date]/
+macro.data$GDPDEF.US[(indic.first.date-1):(indic.last.date-1)])
+indic.first.date <- 10
+macro.data <- read.csv2("data/macro_data.csv", sep=";")
+macro.data$date <- as.Date(macro.data$date,"%d.%m.%Y")
+indic.first.date <- which(macro.data$date==first.date)
+indic.last.date <- which(macro.data$date==last.date)
+dy.US <- log(macro.data$GDP.US[indic.first.date:indic.last.date]/
+macro.data$GDP.US[(indic.first.date-1):(indic.last.date-1)])
+dc.US <- log(macro.data$CONSO.NONDUR.US[indic.first.date:indic.last.date]/
+macro.data$CONSO.NONDUR.US[(indic.first.date-1):(indic.last.date-1)])
+pi.US<- log(macro.data$GDPDEF.US[indic.first.date:indic.last.date]/
+macro.data$GDPDEF.US[(indic.first.date-1):(indic.last.date-1)])
+roll.wind <- 20
+rolling.correl <- rep(NaN,length(dy.US))
+for(t in roll.wind:length(dy.US)){
+rolling.correl[t] <- cor(dc.US[(t-roll.wind+1):t],pi.US[(t-roll.wind+1):t])
+}
+plot(macro.data$date[indic.first.date:indic.last.date],
+rolling.correl,type="l")
+abline(h=0,col="grey")
+indic.first.date
+macro.data <- read.csv2("data/macro_data.csv", sep=";")
+macro.data$date <- as.Date(macro.data$date,"%d.%m.%Y")
+indic.first.date <- which(macro.data$date==first.date)
+indic.last.date <- which(macro.data$date==last.date)
+indic.first.date
+indic.first.date <- 10
+dy.US <- log(macro.data$GDP.US[indic.first.date:indic.last.date]/
+macro.data$GDP.US[(indic.first.date-1):(indic.last.date-1)])
+dc.US <- log(macro.data$CONSO.NONDUR.US[indic.first.date:indic.last.date]/
+macro.data$CONSO.NONDUR.US[(indic.first.date-1):(indic.last.date-1)])
+pi.US<- log(macro.data$GDPDEF.US[indic.first.date:indic.last.date]/
+macro.data$GDPDEF.US[(indic.first.date-1):(indic.last.date-1)])
+roll.wind <- 20
+rolling.correl <- rep(NaN,length(dy.US))
+for(t in roll.wind:length(dy.US)){
+rolling.correl[t] <- cor(dc.US[(t-roll.wind+1):t],pi.US[(t-roll.wind+1):t])
+}
+plot(macro.data$date[indic.first.date:indic.last.date],
+rolling.correl,type="l")
+abline(h=0,col="grey")
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+plot(density(dc.US))
+skewness(dc.US)
+kurtosis(dc.US)
+dc.bar <- mean(dc.US)
+dc.bar
+mean((dc.US - dc.bar)^4)/sd(dc.US)^4
+Model.solved$g
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/procedures/set.of.procedures.macrofinance.model.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/list_moments_2B_fitted.R", echo=TRUE)
+length(all.multiplicative.factors)
+length(all.targets)
+length(all.targets.US)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/list_moments_2B_fitted.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+length(all.targets)
+all.targets.US
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+Model$p_h
+Model$p_l
+Model$g_c
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/procedures/set.of.procedures.macrofinance.model.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+modelled.moments
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+modelled.moments <- compare.target.and.model(Model.est,
+vec.maturities.4.estimation,
+nb.values.s = NB.values.s,
+h.stock = H.stock,
+curvature = CURVATURE,
+grid.4.S = NaN,
+indic.the.ones.used.in.nom.curve,
+indic.the.ones.used.in.rea.curve,
+indic.slope.nom.curve = indic.slope.nom.curve,
+indic.slope.rea.curve = indic.slope.rea.curve,
+indic.condVar.nom.rate = indic.condVar.nom.rate,
+indic.condVar.rea.rate = indic.condVar.rea.rate)
+modelled.moments
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/procedures/set.of.procedures.macrofinance.model.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/procedures/set.of.procedures.macrofinance.model.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/list_moments_2B_fitted.R", echo=TRUE)
+indic.estim.distri
+dim(Filter.matrix)[2]
+13 %% 3
+13 %% 2
+13 %% 1
+13 %% 5
+indic.include.nominal
+Filter.matrix <- matrix(0,length(Filter),2)
+rownames(Filter.matrix) <- rownames(Full.Theta)
+# When jj odd number
+param.2.estim <- c("phi","delta","b","sigma.y","sigma.d")
+Filter.matrix[param.2.estim,1] <- 1
+if(indic.estim.distri == 1){
+param.2.estim <- c("g_cl","g_ch","p_l","p_h")
+Filter.matrix[param.2.estim,1] <- 1
+}
+if(indic.include.nominal == 1){
+param.2.estim <- c("pi.bar","psi","sigma.pi","rho.pi")
+Filter.matrix[param.2.estim,1] <- 1
+}
+# When jj even number
+param.2.estim <- c("delta","b","sigma.y","sigma.d")
+Filter.matrix[param.2.estim,2] <- 1
+if(indic.estim.distri == 1){
+param.2.estim <- c("g_cl","g_ch","p_l","p_h")
+Filter.matrix[param.2.estim,2] <- 1
+}
+jj <- 0
+(jj %% dim(Filter.matrix)[2]) + 1
+jj <- 1
+(jj %% dim(Filter.matrix)[2]) + 1
+jj <- 3
+(jj %% dim(Filter.matrix)[2]) + 1
+jj <- 2
+(jj %% dim(Filter.matrix)[2]) + 1
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+Filter.matrix
+indic.estim.distri
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+Model.est$p_h
+Model.est$p_l
+Model.est$g_c
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+macro.data <- read.csv2("data/macro_data.csv", sep=";")
+macro.data$date <- as.Date(macro.data$date,"%d.%m.%Y")
+if(indic.same.dates.4.macro.fi == 1){
+first.date <- US_yields_q$date[1]
+last.date <- US_yields_q$date[dim(US_yields_q)[1]]
+}else{
+first.date <- first.date.macro
+last.date <- last.date.macro
+}
+indic.first.date <- which(macro.data$date==first.date)
+indic.last.date <- which(macro.data$date==last.date)
+dy.US <- log(macro.data$GDP.US[indic.first.date:indic.last.date]/
+macro.data$GDP.US[(indic.first.date-1):(indic.last.date-1)])
+dc.US <- log(macro.data$CONSO.NONDUR.US[indic.first.date:indic.last.date]/
+macro.data$CONSO.NONDUR.US[(indic.first.date-1):(indic.last.date-1)])
+pi.US<- log(macro.data$GDPDEF.US[indic.first.date:indic.last.date]/
+macro.data$GDPDEF.US[(indic.first.date-1):(indic.last.date-1)])
+roll.wind <- 20
+rolling.correl <- rep(NaN,length(dy.US))
+for(t in roll.wind:length(dy.US)){
+rolling.correl[t] <- cor(dc.US[(t-roll.wind+1):t],pi.US[(t-roll.wind+1):t])
+}
+plot(macro.data$date[indic.first.date:indic.last.date],
+rolling.correl,type="l")
+abline(h=0,col="grey")
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/list_moments_2B_fitted.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/list_moments_2B_fitted.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/list_moments_2B_fitted.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/list_moments_2B_fitted.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/estimation/list_moments_2B_fitted.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/main.R", echo=TRUE)
+NB.values.s
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/ESSAI_fit.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/ESSAI_fit.R", echo=TRUE)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/ESSAI_fit.R", echo=TRUE)
+loadings.on.pi <- matrix(c(res.prices$all.nom.bond.b.yields[2*freq],
+res.prices$all.nom.bond.b.yields[10*freq],
+multi.factor.for.pi.obs,0),ncol=1)
+t
+observations.per.regime <- matrix(observations,ncol=1) %*% matrix(1,1,N)
+observations.per.regime[1,] <- observations.per.regime[1,] -
+res.prices$all.nom.bond.F.yields[2*freq,]
+observations.per.regime[2,] <- observations.per.regime[2,] -
+res.prices$all.nom.bond.F.yields[10*freq,]
+observations.per.regime[3,] <- observations.per.regime[3,] * multi.factor.for.pi.obs
+XX_1 <- 1/sum(loadings.on.pi*loadings.on.pi)
+pi.hats <- XX_1 * t(loadings.on.pi) %*% observations.per.regime
+measur.errors <- matrix(0,length(observations),N)
+fitted.4.regimes <- matrix(0,length(observations),N)
+all.dc <- matrix_nu[,all.z[t-1]] + res.prices$Model.solved$g
+dim(matrix_nu)
+source("~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/A_Main/ESSAI_fit.R", echo=TRUE)

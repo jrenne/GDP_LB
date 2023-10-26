@@ -1,0 +1,25 @@
+Rate of preference for present&$\delta$&&&$0.998$\\
+Risk aversion parameter&$\gamma$&&&$2.0$\\
+\hline
+\multirow{7}{*}{Consumption growth (eq.\,\ref{eq:deltaC} and Subsection\,\ref{sub:calibration})}&$g_{c,l}$&$\times 10^2$&&$-0..39$\\
+&$g_{c,i}$&$\times 10^2$&&$-0..39$\\
+&$g_{c,h}$&$\times 10^2$&&$0.848$\\
+&$p_{ll}$&$\times 10^2$&&$41.467$\\
+&$p_{hh}$&$\times 10^2$&&$96.807$\\
+&$p_{ii}$&$\times 10^2$&&$95.994$\\
+&$p_{il}$&$\times 10^2$&&$2.449$\\
+\hline
+\multirow{2}{*}{GDP growth shocks  (eq.\,\ref{eq:y})}&$\rho_y$&&&$1.000$\\
+&$\sigma_y$&$\times 10^3$&&$0.010$\\
+\hline
+\multirow{4}{*}{Inflation dynamics (eq.\,\ref{eq:pi})}&$\overline{\pi}$&$\times 10^2$&&$0.531$\\
+&$\psi$&&&$0.984$\\
+&$\rho_\pi$&&&$0.037$\\
+&$\sigma_\pi$&$\times 10^3$&&$0.030$\\
+\hline
+\multirow{2}{*}{Dynamics of consumption ratio (eqs.\,\ref{eq:s_dyn2}, \ref{eq:lambda} and \ref{eq:bar_s})}&$\phi$&&&$0.978$\\
+&$b$&$\times 10^2$&&$1.926$\\
+\hline
+\multirow{2}{*}{Growth rate of dividends (eq.\,\ref{eq:dividends})}&$\rho_d$&$\times 10^2$&&$200.000$\\
+&$\sigma_d$&$\times 10^3$&&$0.048$\\
+\hline

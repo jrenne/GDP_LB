@@ -1,0 +1,8 @@
+U.S.&\cellcolor{gray!25}$0.63$\\
+U.K.&$0.21$&$0.19$\\
+Germany&\cellcolor{gray!25}$0.52$&\cellcolor{gray!25}$0.41$&$0.22$\\
+France&\cellcolor{gray!25}$0.75$&\cellcolor{gray!25}$0.66$&$-0.02$&\cellcolor{gray!25}$0.6$\\
+Canada&\cellcolor{gray!25}$0.55$&\cellcolor{gray!25}$0.67$&\cellcolor{gray!25}$0.67$&$0.38$&$0.29$\\
+Japan&$-0.27$&$-0.17$&\cellcolor{gray!25}$0.51$&$-0.44$&$-0.45$&$0.15$\\
+Brazil&$-0.13$&$-0.07$&$-0.12$&$-0.56$&$-0.16$&$-0.27$&\cellcolor{gray!25}$0.48$\\
+China&$-0.08$&$0.09$&$0.11$&$-0.13$&$-0.16$&$-0.01$&$0.34$&\cellcolor{gray!25}$0.46$\\

@@ -1,0 +1,41 @@
+Mean of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.65&0.67\\
+Mean of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.47&0.67\\
+Mean of inflation $\pi_t$&$\times 10^{2}$&&0.54&0.53\\
+Std. dev. of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.57&0.58\\
+Std. dev. of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.48&0.58\\
+Std. dev. of inflation $\pi_t$&$\times 10^{2}$&&0.24&0.12\\
+\hline
+Skewness of consumption growth rate $\Delta c_t$&&&--1.61&-0..1\\
+Kurtosis of consumption growth rate $\Delta c_t$&&&11.14&3.21\\
+Mean of short-term nom. rate&$\times 10^{2}$&&2.32&2.94\\
+Mean of 10-year nom. rate&$\times 10^{2}$&&5.43&4.16\\
+Mean of 30-year nom. rate&$\times 10^{2}$&&5.77&5.87\\
+Std. dev. of short-term nom. rate&$\times 10^{2}$&&2.17&2.61\\
+Std. dev. of 10-year nom. rate&$\times 10^{2}$&&2.33&2.11\\
+Std. dev. of 30-year nom. rate&$\times 10^{2}$&&1.95&1.73\\
+Auto-correl. of short-term nom. rate&&&0.99&0.84\\
+Auto-correl. of 10-year nom. rate&&&0.99&0.97\\
+Auto-correl. of 30-year nom. rate&&&0.98&0.98\\
+\hline
+Mean of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&2.45&2.93\\
+Std. dev. of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&1.43&1.60\\
+Mean of short-term real rate&$\times 10^{2}$&&0.14&0.83\\
+Mean of 2-year real rate&$\times 10^{2}$&&0.08&1.10\\
+Mean of 10-year real rate&$\times 10^{2}$&&1.67&2.23\\
+Std. dev. of short-term real rate&$\times 10^{2}$&&1.95&2.61\\
+Std. dev. of 2-year real rate&$\times 10^{2}$&&1.36&2.25\\
+Std. dev. of 10-year real rate&$\times 10^{2}$&&1.29&2.11\\
+Auto-correl. of short-term real rate&&&0.81&0.87\\
+Auto-correl. of 2-year real rate&&&0.86&0.97\\
+Auto-correl. of 10-year real rate&&&0.98&0.98\\
+\hline
+Mean of slope of the real yd curve (3m-10yrs)&$\times 10^{2}$&&2.01&1.23\\
+Std. dev. of slope of the real yd curve (3m-10yrs)&$\times 10^{2}$&&1.25&1.36\\
+Mean of condi. var. of the short-term nom. rate&$\times 10^{5}$&&1.39&16.14\\
+\hline
+Mean of condi. var. of the 30-year nom. rate&$\times 10^{5}$&&2.22&1.40\\
+Mean of condi. var. of the 10-year real rate&$\times 10^{5}$&&1.33&2.89\\
+Average expected excess return (annualized)&$\times 10^{2}$&&7.78&6.30\\
+Average cond. volat. of stock return (annualized)&$\times 10^{2}$&&15.69&19.95\\
+Average P/D&&&40.93&42.95\\
+Std. dev. of P/D&&&17.32&14.71\\

@@ -1,0 +1,39 @@
+\begin{table}
+\caption{Influence of issuance strategies on debt-to-GDP quantiles}
+\label{table_debt2GDP_quantiles}
+\begin{center}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}lccccccccccc}
+\\
+&\multicolumn{6}{c}{{\bf Panel A -- Maturity of issued bonds: 1 year}}\\
+\\
+\hline
+Quantile &\multicolumn{3}{c}{Horizon: 2 years}&\multicolumn{3}{c}{Horizon: 20 years}\\
+\hline
+&Nominal&Infl.-linked&GDP-linked&Nominal&Infl.-linked&GDP-linked \\
+\hline
+50\%&0.99&0.99&0.99&0.90&0.90&0.95 \\
+90\%&1.07&1.07&1.08&1.61&1.61&1.71 \\
+95\%&1.10&1.10&1.10&1.99&1.99&2.06 \\
+\hline
+\\
+&\multicolumn{6}{c}{{\bf Panel B -- Maturity of issued bonds: 10 years}}\\
+\\
+\hline
+Quantile &\multicolumn{3}{c}{Horizon: 2 years}&\multicolumn{3}{c}{Horizon: 20 years}\\
+\hline
+&Nominal&Infl.-linked&GDP-linked&Nominal&Infl.-linked&GDP-linked \\
+\hline
+50\%&1.00&1.00&1.01&1.03&1.05&1.12 \\
+90\%&1.08&1.08&1.09&1.90&1.93&2.05 \\
+95\%&1.11&1.11&1.12&2.38&2.43&2.65 \\
+\hline
+\end{tabular*}
+\end{center}
+\begin{scriptsize}
+\parbox{\linewidth}{
+Note: This table reports the quantiles of the distributions of debt-to-GDP ratios resulting 
+                     from different issuance strategies. The issuance strategies are basic strategies whereby the government,
+                     on each period, issues the same type of bonds to meet its funding needs.
+}
+\end{scriptsize}
+\end{table}

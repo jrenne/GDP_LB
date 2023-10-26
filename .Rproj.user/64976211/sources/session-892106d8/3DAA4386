@@ -1,0 +1,26 @@
+{
+    "id": "3DAA4386",
+    "path": "~/Dropbox/Research/13_Macrofounded_SDF/3_Codes/GDP_LB/prepare_outputs/chart.distri.IR.R",
+    "project_path": "prepare_outputs/chart.distri.IR.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1698319843372.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "45,15",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1698320641,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1698320641465,
+    "read_only": false,
+    "read_only_alternatives": []
+}
