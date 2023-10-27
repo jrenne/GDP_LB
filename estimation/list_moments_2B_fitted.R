@@ -42,22 +42,6 @@ all.target.names <- c(all.target.names,
 
 
 # =========================================
-# Skewness and kurtosis of consumption growth:
-
-skewness.dc.US <- mean((dc.US - mean(dc.US))^3)/sd(dc.US)^3
-kurtosis.dc.US <- mean((dc.US - mean(dc.US))^4)/sd(dc.US)^4
-
-all.targets.US <- c(all.targets.US,
-                    skewness.dc.US,
-                    kurtosis.dc.US)
-
-all.target.names <- c(all.target.names,
-                      "Skewness of consumption growth rate $\\Delta c_t$",
-                      "Kurtosis of consumption growth rate $\\Delta c_t$"
-)
-
-
-# =========================================
 # Means, Std. dev. and auto-correlation of nom. interest rates
 
 all.targets.US <- c(all.targets.US,
@@ -189,24 +173,24 @@ all.weights.US <- rep(10^100,length(all.targets.US))
 all.weights.US[c(2,3)] <- .001 # means of pi and c
 all.weights.US[c(4,5,6)] <- .005 # st dev of pi and c
 
-#all.weights.US[c(7,8)] <- c(.1,2) # skewness and kurtosis
-all.weights.US[c(7,8)] <- c(100,100) # skewness and kurtosis
+# #all.weights.US[c(7,8)] <- c(.1,2) # skewness and kurtosis
+# all.weights.US[c(7,8)] <- c(100,100) # skewness and kurtosis
 
-all.weights.US[9:11] <- c(.003,.002,.001) # means of nominal rates
-all.weights.US[12:14] <- .001 # std dev of nominal rates
-all.weights.US[15:17] <- .1 # auto-cor of nominal rates
+all.weights.US[7:9] <- c(.003,.002,.001) # means of nominal rates
+all.weights.US[10:12] <- .001 # std dev of nominal rates
+all.weights.US[13:15] <- .1 # auto-cor of nominal rates
 
-all.weights.US[20:22] <- c(.003,.002,.001) # mean of real rates
-all.weights.US[23:25] <- .002 # std dev of real rates
-all.weights.US[26:28] <- .1 # auto-cor of real rates
+all.weights.US[18:20] <- c(.003,.002,.001) # mean of real rates
+all.weights.US[21:23] <- .002 # std dev of real rates
+all.weights.US[24:26] <- .1 # auto-cor of real rates
 
-all.weights.US[c(19,30)] <- .003 # Std. dev. of slope of the nom and real yd curve
-all.weights.US[c(31,32,33)] <- 2e-05 # Mean of condi. var. of rates
+all.weights.US[c(17,28)] <- .003 # Std. dev. of slope of the nom and real yd curve
+all.weights.US[c(29,30,31)] <- 2e-05 # Mean of condi. var. of rates
 
-all.weights.US[34]  <- abs(all.targets.US)[34] / 5
-all.weights.US[35]  <- abs(all.targets.US)[35] / 2
-all.weights.US[36]  <- abs(all.targets.US)[36] / 40 # Average P/D
-all.weights.US[37]  <- abs(all.targets.US)[37] / 20 # Std. dev. of P/D
+all.weights.US[32]  <- abs(all.targets.US)[32] / 5
+all.weights.US[33]  <- abs(all.targets.US)[33] / 2
+all.weights.US[34]  <- abs(all.targets.US)[34] / 40 # Average P/D
+all.weights.US[35]  <- abs(all.targets.US)[35] / 20 # Std. dev. of P/D
 
 
 # =========================================
@@ -214,7 +198,6 @@ all.weights.US[37]  <- abs(all.targets.US)[37] / 20 # Std. dev. of P/D
 
 all.multiplicative.factors <- c(
   2,2,2,2,2,2,
-  0,0, # skewness and kurtosis
   2,2,2,2,2,2,
   0,0,0,
   2,2,

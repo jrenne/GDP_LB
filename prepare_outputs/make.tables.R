@@ -4,6 +4,12 @@
 # Make sure Model.est is avaulable before running this script
 # ==============================================================================
 
+format.nb0 <- paste("%.",0,"f",sep="")
+format.nb1 <- paste("%.",1,"f",sep="")
+format.nb2 <- paste("%.",2,"f",sep="")
+format.nb3 <- paste("%.",3,"f",sep="")
+format.nb5 <- paste("%.",5,"f",sep="")
+
 
 part.table.US <- (cbind(all.target.names,
                         all.targets,
@@ -21,8 +27,8 @@ for(i in 1:length(all.targets)){
                        c(paste(part.table.US[i,1],
                                ifelse(all.multiplicative.factors[i]==0,"&",paste("&$\\times 10^{",toString(all.multiplicative.factors[i]),"}$",sep="")),
                                "&",
-                               "&",round.fixed.length(10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,2]),2),
-                               "&",round.fixed.length(10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,3]),2),
+                               "&",sprintf(format.nb2,10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,2])),
+                               "&",sprintf(format.nb2,10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,3])),
                                "\\\\",
                                sep="")))
   
@@ -42,8 +48,8 @@ for(i in 1:17){
                        c(paste(part.table.US[i,1],
                                ifelse(all.multiplicative.factors[i]==0,"&",paste("&$\\times 10^{",toString(all.multiplicative.factors[i]),"}$",sep="")),
                                "&",
-                               "&",round.fixed.length(10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,2]),2),
-                               "&",round.fixed.length(10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,3]),2),
+                               "&",sprintf(format.nb2,10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,2])),
+                               "&",sprintf(format.nb2,10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,3])),
                                "\\\\",
                                sep="")))
   
@@ -60,8 +66,8 @@ for(i in 18:35){
                        c(paste(part.table.US[i,1],
                                ifelse(all.multiplicative.factors[i]==0,"&",paste("&$\\times 10^{",toString(all.multiplicative.factors[i]),"}$",sep="")),
                                "&",
-                               "&",round.fixed.length(10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,2]),2),
-                               "&",round.fixed.length(10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,3]),2),
+                               "&",sprintf(format.nb2,10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,2])),
+                               "&",sprintf(format.nb2,10^all.multiplicative.factors[i]*as.numeric(part.table.US[i,3])),
                                "\\\\",
                                sep="")))
   if(sum(i==indic.hline-1)>0){
@@ -93,7 +99,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$delta,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$delta),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -109,7 +115,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$Gamma,nb.decim),"$",
+                   sprintf(format.nb1,10^coef.mult * Model.est$Gamma),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -128,7 +134,7 @@ this.line <- "\\multirow{7}{*}{Consumption growth (eq.\\,\\ref{eq:deltaC} and Su
 this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$g_c[1],nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$g_c[1]),"$",
                    #"&(XXX)&",
                    sep="")
 this.line <- paste(this.line,"\\\\",sep="")
@@ -138,7 +144,7 @@ this.line <- "&$g_{c,i}$"
 this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$g_c[1],nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$g_c[1]),"$",
                    #"&(XXX)&",
                    sep="")
 this.line <- paste(this.line,"\\\\",sep="")
@@ -148,7 +154,7 @@ this.line <- "&$g_{c,h}$"
 this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$g_c[3],nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$g_c[3]),"$",
                    #"&(XXX)&",
                    sep="")
 this.line <- paste(this.line,"\\\\",sep="")
@@ -161,7 +167,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$p_ll,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$p_ll),"$",
                    #"&(XXX)&",
                    sep="")
 this.line <- paste(this.line,"\\\\",sep="")
@@ -172,7 +178,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$p_hh,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$p_hh),"$",
                    #"&(XXX)&",
                    sep="")
 this.line <- paste(this.line,"\\\\",sep="")
@@ -183,7 +189,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$p_ii,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$p_ii),"$",
                    #"&(XXX)&",
                    sep="")
 this.line <- paste(this.line,"\\\\",sep="")
@@ -194,7 +200,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$p_il,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$p_il),"$",
                    #"&(XXX)&",
                    sep="")
 this.line <- paste(this.line,"\\\\",sep="")
@@ -213,7 +219,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$rho.y,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$rho.y),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -226,7 +232,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$sigma.y,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$sigma.y),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -245,7 +251,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$pi.bar,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$pi.bar),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -259,7 +265,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$psi,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$psi),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -273,7 +279,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$rho.pi,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$rho.pi),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -286,7 +292,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$sigma.pi,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$sigma.pi),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -305,7 +311,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$phi,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$phi),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -318,7 +324,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$b,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$b),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -337,7 +343,7 @@ this.line <- "\\multirow{2}{*}{Growth rate of dividends (eq.\\,\\ref{eq:dividend
 this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$rho.d,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$rho.d),"$",
                    #"&(XXX)&",
                    sep="")
 
@@ -350,7 +356,7 @@ this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 
 this.line <- paste(this.line,"&$",
-                   round.fixed.length(10^coef.mult * Model.est$sigma.d,nb.decim),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$sigma.d),"$",
                    #"&(XXX)&",
                    sep="")
 

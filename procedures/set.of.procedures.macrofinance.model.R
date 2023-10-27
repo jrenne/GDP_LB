@@ -94,10 +94,10 @@ simul.model.solved <- function(res.prices,T,
   res.mom.pi.z <- compute.uncond.mom.pi.z(res.prices$Model.solved)
   
   if(is.na(ini.state)){
-    # ini.state <- which(res.mom.pi.z$E.z==max(res.mom.pi.z$E.z))[1] # most likely state
-    # Dray inittial state in stationary distribution of states:
-    u <- runif(1)
-    ini.state <- which(u<cumsum(res.mom.pi.z$E.z))[1]
+    ini.state <- which(res.mom.pi.z$E.z==max(res.mom.pi.z$E.z))[1] # most likely state
+    # Draw initial state in stationary distribution of states:
+    #u <- runif(1)
+    #ini.state <- which(u<cumsum(res.mom.pi.z$E.z))[1]
   }
   sim.z     <- simul.z(res.prices$Model.solved$P,ini.state,T+1,nb.of.periods.with.ini.state+1)
   # WARNING: first date is for date 0

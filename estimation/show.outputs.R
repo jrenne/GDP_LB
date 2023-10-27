@@ -42,6 +42,7 @@ print(paste("Maximized criteria: ",toString(round(max.criteria,2)),sep=""))
 
 # Build estimated model:
 Model.est <- Theta.2.Model(Full.Theta)
+Model <- Model.est
 
 # Compute modeled moments:
 res <- compare.target.and.model(Model.est,

@@ -45,10 +45,29 @@ pi.hat <- res.estim$pi.hat
 # ==============================================================================
 # Term premium chart :
 
+
+# Comparison with Kim and Wright:
+USY_Yds_TermPremium <- read.csv("data/USY_Yds_TermPremium.csv")
+USY_Yds_TermPremium$DATE <- as.Date(USY_Yds_TermPremium$DATE)
+first.year <- as.numeric(format(USY_Yds_TermPremium$DATE[1],"%Y"))
+last.year  <- as.numeric(format(last.date,"%Y"))
+USY_Yds_TermPremium$year  <- as.numeric(format(USY_Yds_TermPremium$DATE,"%Y"))
+USY_Yds_TermPremium$month <- as.numeric(format(USY_Yds_TermPremium$DATE,"%m"))
+USY_Yds_TermPremium_Q <- data.frame(USY_Yds_TermPremium[1,])
+count <- 0
+for(Year in first.year:last.year){
+  for(Q in 1:4){
+    count <- count + 1
+    data.tempo <- subset(USY_Yds_TermPremium,(year==Year)&(month %in% c(3*(Q-1) + 1:3)))
+    USY_Yds_TermPremium_Q[count,2:dim(USY_Yds_TermPremium_Q)[2]] <- 
+      apply(data.tempo[,2:dim(USY_Yds_TermPremium_Q)[2]],2,function(x){mean(x,na.rm=TRUE)})
+    USY_Yds_TermPremium_Q$DATE[count] <- as.Date(paste(Year,"-",3*(Q-1)+1,"-01",sep=""))
+  }
+}
+
 file   <- "Figure_termpremiums"
 pdf(file=paste(output.figures.folder,"/",file,".pdf",sep=""),
     pointsize=8, width=9, height=4)
-
 
 fitted.2yr.underP <- res.prices.underP$all.nom.bond.F.yields[2,z.hat] +
   res.prices.underP$all.nom.bond.b.yields[2] * pi.hat
@@ -58,6 +77,14 @@ fitted.10yr.underP <- res.prices.underP$all.nom.bond.F.yields[3,z.hat] +
   res.prices.underP$all.nom.bond.b.yields[3] * pi.hat
 fitted.10yr.underQ <- res.prices$all.nom.bond.F.yields[3,z.hat] +
   res.prices$all.nom.bond.b.yields[3] * pi.hat
+
+data.frame.TP <- data.frame(DATE=vec.dates,
+                            TP2=100*(fitted.2yr.underQ-fitted.2yr.underP),
+                            TP10=100*(fitted.10yr.underQ-fitted.10yr.underP))
+data.frame.TP <- merge(data.frame.TP,USY_Yds_TermPremium_Q,by="DATE")
+cor(data.frame.TP$TP2,data.frame.TP$THREEFYTP2)
+cor(data.frame.TP$TP10,data.frame.TP$THREEFYTP10)
+
 
 par(mfrow=c(1,2))
 par(plt=c(.15,.95,.1,.85))
@@ -83,8 +110,32 @@ lines(vec.dates,fitted.10yr.underP,col="dark grey",lwd=2)
 lines(vec.dates,fitted.10yr.underQ-fitted.10yr.underP,col="blue",lwd=3,lty=3)
 grid()
 
-dev.off()
 
+# plot(vec.dates,fitted.2yr.underQ-fitted.2yr.underP,type="l",lwd=3,lty=3,
+#      ylim=c(-.005,.015),col="blue",
+#      main="(c) 2-year term premium",xlab="",ylab="",las=1)
+# lines(USY_Yds_TermPremium_Q$DATE,USY_Yds_TermPremium_Q$THREEFYTP2/100,
+#       col="dark grey",lwd=3,lty=1)
+# grid()
+# legend("topright", # places a legend at the appropriate place c("Health","Defense"), # puts text in the legend 
+#        c("Model","Kim and Wright"),
+#        lty=c(3,3), # gives the legend appropriate symbols (lines)       
+#        lwd=c(3,3), # line width
+#        col=c("blue","dark grey"),
+#        bg="white",
+#        #pch=c(NaN,22),
+#        #pt.bg=c(NaN,rgb(0,0,0,alpha=0.2)),
+#        #pt.cex = c(2),
+#        seg.len = 2
+# )
+# plot(vec.dates,fitted.10yr.underQ-fitted.10yr.underP,type="l",lwd=3,lty=3,
+#      ylim=c(-.005,.05),col="blue",
+#      main="(d) 10-year term premium",xlab="",ylab="",las=1)
+# lines(USY_Yds_TermPremium_Q$DATE,USY_Yds_TermPremium_Q$THREEFYTP10/100,
+#       col="dark grey",lwd=3,lty=1)
+
+
+dev.off()
 
 
 

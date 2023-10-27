@@ -397,10 +397,11 @@ for(i in 1:length(vector.of.H)){
         #,bw = bw.4.kernel.density*sqrt(horizons.used.4.plots[j]))
         
         this.line <- paste(this.line,"&",
-                           round.fixed.length(quantile.density(pdf,vec.of.quantiles[k]),2)
-                           ,sep="")
+                           sprintf(paste("%.",2,"f",sep=""),
+                                   quantile.density(pdf,vec.of.quantiles[k])),sep="")
       }
     }
+
     this.line <- paste(this.line,"\\\\")
     
     latex.table <- rbind(latex.table,

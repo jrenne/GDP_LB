@@ -551,7 +551,7 @@ compare.target.and.model <- function(Model,
   modelled.E.dy <- modelled.E.dc
   modelled.moments <- c(modelled.E.dy,modelled.E.dc,Model$pi.bar,
                         res$stdv.dy,res$stdv.dc,res$stdv.pi,
-                        res$skewness.dc, res$kurtosis.dc,
+                        #res$skewness.dc, res$kurtosis.dc,
                         res$mean.nom.yields[indic.the.ones.used.in.nom.curve],
                         res$stdv.nom.yds[indic.the.ones.used.in.nom.curve],
                         res$autocor.nom.yds[indic.the.ones.used.in.nom.curve[1],indic.the.ones.used.in.nom.curve[1]],
@@ -597,9 +597,9 @@ Theta.2.Model <- function(theta){
     rho.d = theta[13],
     g_c = c(theta[14],theta[14]+exp(theta[15]),
             theta[14]+exp(theta[15])+exp(theta[16])),
-    p_ll = exp(theta[17])/(1 + exp(theta[17])),
-    p_hh = exp(theta[18])/(1 + exp(theta[18])),
-    p_ii = exp(theta[19])/(1 + exp(theta[19])),
+    p_ll = .01 + .98*exp(theta[17])/(1 + exp(theta[17])),
+    p_hh = .01 + .98*exp(theta[18])/(1 + exp(theta[18])),
+    p_ii = .01 + .98*exp(theta[19])/(1 + exp(theta[19])),
     freq = FREQ
   )
   # Make sure that b < Gamma * (1 - phi)
@@ -607,7 +607,7 @@ Theta.2.Model <- function(theta){
     Model$Gamma * (1 - Model$phi)
   
   # Determine p_il:
-  Model$p_il = (1-Model$p_ii)*exp(theta[20])/(1 + exp(theta[20]))
+  Model$p_il = (1-Model$p_ii)*(.01 + .98*exp(theta[20])/(1 + exp(theta[20])))
   
   # Add g_d:
   P <- matrix(0,3,3)
@@ -650,10 +650,10 @@ Model.2.Theta <- function(Model){
     Model$g_c[1],
     log(Model$g_c[2]-Model$g_c[1]),
     log(Model$g_c[3]-Model$g_c[2]),
-    inv.logit(Model$p_ll),
-    inv.logit(Model$p_hh),
-    inv.logit(Model$p_ii),
-    inv.logit(Model$p_il/(1-Model$p_ii))
+    inv.logit((Model$p_ll-.01)/.98),
+    inv.logit((Model$p_hh-.01)/.98),
+    inv.logit((Model$p_ii-.01)/.98),
+    inv.logit((Model$p_il/(1-Model$p_ii)-.01)/.98)
   )
   Theta <- matrix(Theta,ncol=1)
   row.names(Theta) <- c("sigma.nu","phi","delta","b","Gamma",
@@ -716,42 +716,4 @@ compute.criteria <- function(Theta.0,
   
   return(c(loss))
 }
-
-
-round.fixed.length <- function(X,n){
-  # This procedure is used in the automatic creation of Latex tables
-  # x is numeric. The output is a string with n numbers after ".", even if they are 0s.
-  signX <- sign(X)
-  if(signX>=0){
-    signX <- NULL
-  }else{
-    signX <- "-"
-  }
-  x <- abs(X)
-  rounded.abs.X <- round(X,n)
-  string.rounded.abs.X <-toString(rounded.abs.X)
-  nb.char.string.rounded.abs.X <- nchar(string.rounded.abs.X)
-  
-  integer.rounded.abs.X <- toString(as.integer(rounded.abs.X))
-  nb.char.integer.rounded.abs.X <- nchar(integer.rounded.abs.X)
-  
-  string.x <- paste(signX,integer.rounded.abs.X,sep="")
-  
-  if(n>0){
-    string.x <- paste(string.x,".",sep="")
-    nb.of.available.decimal <- nb.char.string.rounded.abs.X - nb.char.integer.rounded.abs.X - 1
-    for(i in 1:n){
-      if(i<=nb.of.available.decimal){
-        string.x <- paste(string.x,str_sub(string.rounded.abs.X,
-                                           nb.char.integer.rounded.abs.X+1+i,
-                                           nb.char.integer.rounded.abs.X+1+i),sep="")
-      }else{
-        string.x <- paste(string.x,"0",sep="")
-      }
-    }
-    
-  }
-  return(string.x)
-}
-
 
