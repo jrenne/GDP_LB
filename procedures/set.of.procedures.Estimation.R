@@ -277,7 +277,8 @@ compute.uncond.mom.pi.z <- function(Model){
     AutoCov.pi.z = AutoCov.pi.z,
     Var.pi.y.c = Var.pi.y.c,
     Cor.pi.y.c = Cor.pi.y.c,
-    G.E.z = G.E.z
+    G.E.z = G.E.z,
+    PHI=PHI
   ))
 }
 

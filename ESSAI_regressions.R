@@ -63,3 +63,67 @@ summary(lm(dep.var~indep.var))
 # summary(lm(dep.var~indep.var))
 
 
+
+
+
+# ==============================================================================
+# Use formula of population regression coefficient:
+
+compute.slope <- function(a_Y,b_Y,c_Y,h,Var.pi.z,PHI){
+  slope <- (t(a_Y) %*%  Var.pi.z %*% t(PHI%^%h) - t(b_Y) %*% Var.pi.z) %*% c_Y /
+    (t(c_Y) %*% Var.pi.z %*% c_Y)
+  return(slope)
+}
+
+# Approximation method:
+NB.values.s <- 100
+
+max.matur <- 40 # expressed at the model frequency
+vec.maturities <- 1:max.matur
+
+# Build estimated model:
+Model.est <- Theta.2.Model(Full.Theta)
+
+# ==============================================================================
+# Solve the model and get prices' specifications:
+res.prices <- compute.prices(Model.est,
+                             1:40,
+                             nb.values.s = NB.values.s,
+                             h.stock = 1,
+                             curvature = CURVATURE,
+                             grid.4.S = NaN)
+
+res.mom.pi.z <- compute.uncond.mom.pi.z(res.prices$Model.solved)
+Var.pi.z <- res.mom.pi.z$Var.pi.z
+PHI <- res.mom.pi.z$PHI
+
+# # Fit of nominal rates:
+# fitted01yr_nom <- res.prices$all.nom.bond.F.yields[1,z.hat] + 
+#   res.prices$all.nom.bond.b.yields[1] * pi.hat
+# fitted02yr_nom <- res.prices$all.nom.bond.F.yields[2,z.hat] + 
+#   res.prices$all.nom.bond.b.yields[2] * pi.hat
+# fitted05yr_nom <- res.prices$all.nom.bond.F.yields[3,z.hat] + 
+#   res.prices$all.nom.bond.b.yields[3] * pi.hat
+# fitted10yr_nom <- res.prices$all.nom.bond.F.yields[4,z.hat] + 
+#   res.prices$all.nom.bond.b.yields[4] * pi.hat
+
+# Regression of 
+
+all.n.in.q <- (h+1):40
+all.slopes <- NULL
+h <- 4
+for(n.in.q in all.n.in.q){
+  a_Y <- matrix(c(res.prices$all.nom.bond.b.yields[n.in.q-h],
+                  res.prices$all.nom.bond.F.yields[n.in.q-h,]),
+                ncol=1)
+  b_Y <- matrix(c(res.prices$all.nom.bond.b.yields[n.in.q],
+                  res.prices$all.nom.bond.F.yields[n.in.q,]),
+                ncol=1)
+  c_Y <- h/(n.in.q-h) * 
+    matrix(c(res.prices$all.nom.bond.b.yields[n.in.q]-res.prices$all.nom.bond.b.yields[h],
+             res.prices$all.nom.bond.F.yields[n.in.q,]-res.prices$all.nom.bond.F.yields[h,]),
+           ncol=1)
+  all.slopes <- c(all.slopes,
+                  compute.slope(a_Y,b_Y,c_Y,h,Var.pi.z,PHI))
+}
+plot(all.n.in.q/4,all.slopes)
