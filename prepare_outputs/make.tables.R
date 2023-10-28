@@ -144,7 +144,7 @@ this.line <- "&$g_{c,i}$"
 this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
 this.line <- paste(this.line,"&$",
-                   sprintf(format.nb3,10^coef.mult * Model.est$g_c[1]),"$",
+                   sprintf(format.nb3,10^coef.mult * Model.est$g_c[2]),"$",
                    #"&(XXX)&",
                    sep="")
 this.line <- paste(this.line,"\\\\",sep="")
@@ -286,7 +286,7 @@ this.line <- paste(this.line,"&$",
 this.line <- paste(this.line,"\\\\",sep="")
 latex.table <- rbind(latex.table,this.line)
 
-coef.mult <- 3
+coef.mult <- 4
 this.line <- "&$\\sigma_\\pi$"
 this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
@@ -337,8 +337,8 @@ latex.table <- rbind(latex.table,"\\hline")
 
 
 # -------- Dividend shocks
-coef.mult <- 2
-nb.decim <- 3
+coef.mult <- 0
+nb.decim <- 2
 this.line <- "\\multirow{2}{*}{Growth rate of dividends (eq.\\,\\ref{eq:dividends})}&$\\rho_d$"
 this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")
@@ -350,7 +350,8 @@ this.line <- paste(this.line,"&$",
 this.line <- paste(this.line,"\\\\",sep="")
 latex.table <- rbind(latex.table,this.line)
 
-coef.mult <- 3
+coef.mult <- 4
+nb.decim <- 3
 this.line <- "&$\\sigma_d$"
 this.line <- paste(this.line,ifelse(coef.mult==0,"&&",
                                     paste("&$\\times 10^",toString(coef.mult),"$&",sep="")),sep="")

@@ -1,12 +1,12 @@
 
-# =========================================
+# ==============================================================================
 # List of moments to be fitted
-# =========================================
+# ==============================================================================
 
 all.targets.US <- NULL
 all.target.names <- NULL
 
-# =========================================
+# ==============================================================================
 # Means of macro growth rates
 
 all.targets.US <- c(all.targets.US,
@@ -26,7 +26,7 @@ US_yields_q$ST.REAL.RATE <- US_yields_q$US_real_3m_SurveyBased
 
 
 
-# =========================================
+# ==============================================================================
 # Std. dev. of macro growth rates
 
 all.targets.US <- c(all.targets.US,
@@ -41,7 +41,7 @@ all.target.names <- c(all.target.names,
 )
 
 
-# =========================================
+# ==============================================================================
 # Means, Std. dev. and auto-correlation of nom. interest rates
 
 all.targets.US <- c(all.targets.US,
@@ -86,7 +86,7 @@ all.target.names <- c(all.target.names,
 
 
 
-# =========================================
+# ==============================================================================
 # Means, Std. dev. and auto-correlation of real interest rates
 
 all.targets.US <- c(all.targets.US,
@@ -129,7 +129,7 @@ all.target.names <- c(all.target.names,
                       "Std. dev. of slope of the real yd curve (3m-10yrs)")
 
 
-# =========================================
+# ==============================================================================
 # Means and variances of condi. var. of interest rates
 
 all.targets.US <- c(all.targets.US,
@@ -143,7 +143,8 @@ all.target.names <- c(all.target.names,
                       "Mean of condi. var. of the 30-year nom. rate",
                       "Mean of condi. var. of the 10-year real rate")
 
-# =========================================
+
+# ==============================================================================
 # Stock returns
 
 all.targets.US <- c(all.targets.US,
@@ -165,7 +166,7 @@ all.target.names <- c(all.target.names,
 
 
 
-# =========================================
+# ==============================================================================
 # Definition of weights used in the computation of the loss function:
 
 all.weights.US <- rep(10^100,length(all.targets.US))
@@ -193,7 +194,7 @@ all.weights.US[34]  <- abs(all.targets.US)[34] / 40 # Average P/D
 all.weights.US[35]  <- abs(all.targets.US)[35] / 20 # Std. dev. of P/D
 
 
-# =========================================
+# ==============================================================================
 # Specifiy multiplicative factors (for fit table)
 
 all.multiplicative.factors <- c(

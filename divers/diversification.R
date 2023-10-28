@@ -28,9 +28,6 @@ for(ctry in 1:nb.ctries){
     x <- dlGDP[(T0-roll.T+1):T0,ctry]
     #plot(x,type="l")
     if(sum(is.na(x))==0){
-      #ar.x <- arima(x,order=c(1,0,0))
-      #fcast <- forecast(ar.x,h=h)
-      #fcasted.chge <- sum(fcast$mean)
       fcasted.chge <- h*mean(x)
       realized.chge <- sum(dlGDP[(T0+1):(T0+h),ctry])
       fcast.error <- realized.chge - fcasted.chge

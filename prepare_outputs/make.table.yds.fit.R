@@ -1,7 +1,5 @@
 
 
-#load(file="save_tempo.Rdat")
-
 
 nb.dec <- 2 # number of decimal numbers
 format.nb  <- paste("%.",nb.dec,"f",sep="")

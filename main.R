@@ -19,7 +19,7 @@ par(plt=c(.1,.9,.1,.9)) # set initial margins for plots
 # SETTINGS ---------------------------------------------------------------------
 
 # Numerical optimization (1) of moments or not (0)?
-indic.estim <- 1
+indic.estim <- 0
 indic.start.from.last <- 0 # if = 1, then start from the last estimated model.
 indic.save.results.if.estim <- 1 # save results if estimation? (1 = Yes)
 
@@ -184,10 +184,12 @@ if(indic.debt.simulations == 1){
   vector.of.H           <- c(4,40) # Maturites of issued bonds -- expressed at the model frequency
   horizons.used.4.plots <- c(8,80) # Horizons considered, expressed in number of model periods
   
-  N.sim <- 200 # number of simulations
+  N.sim <- 10000 # number of simulations
   #N.sim <- 200 # number of simulations
   
   source('simulations/run.debt.dyn_PDFs.R')
+  
+  stop()
   
   # ----------------------------------------------------------------------------
   # Run script computing Risk measures (Cost/Risk plots):

@@ -8,31 +8,17 @@ names.of.regimes <- c("Low-growth regime",
 Model <- Theta.2.Model(Full.Theta)
 
 # Approximation method:
-NB.values.s <- 300
-index.min.S <- 50
-index.min.S.4.price_sensitivity <- 50
-index.max.S.4.price_sensitivity <- 295
-
-NB.values.s <- 50
+NB.values.s <- 200
 index.min.S <- 5
-index.min.S.4.price_sensitivity <- 5
-index.max.S.4.price_sensitivity <- 45
-
-
-
 
 # For simulations, the maximum maturity will be the max entry of vector.of.H:
 max.matur <- 40 # expressed at the model frequency
 
-# ==========================================
-# ==========================================
 vector.of.maturities.4 <- c(8,40)
-# ==========================================
-# ==========================================
 
 x.axis <- c(-.05,.10)
 
-# =============================
+# ==============================================================================
 # Solve the model:
 vec.maturities <- 1:max.matur
 res.prices <- compute.prices(Model,
@@ -43,7 +29,7 @@ res.prices <- compute.prices(Model,
                              grid.4.S = NaN)
 
 
-# =============================
+# ==============================================================================
 # Compute model-implied moments:
 res.mom.pi.z <- compute.uncond.mom.pi.z(res.prices$Model.solved)
 
@@ -59,7 +45,6 @@ par(plt=c(.1,.95,.23,.85))
 
 for(j in 1:3){# Loop on regimes
   
-  
   for(maturity in vector.of.maturities.4){
     adj <- res.prices$all.GDP.bond.yields[maturity,(index.min.S+1):NB.values.s] -
       res.prices$all.GDP.bond.yields[maturity,(index.min.S):(NB.values.s-1)]
@@ -72,7 +57,7 @@ for(j in 1:3){# Loop on regimes
          yaxt="n",
          col="white",
          xlim=x.axis,
-         ylim = c(0,20),
+         ylim = c(0,12),
          main=paste(names.of.regimes[j],", maturity: ",toString(maturity/FREQ),ifelse(maturity<=4," year"," years"),sep="")
     )
     
@@ -120,8 +105,6 @@ for(j in 1:3){# Loop on regimes
   }
   
 }
-
-
 
 dev.off()
 

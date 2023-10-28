@@ -1,8 +1,5 @@
 
 
-#load(file="save_tempo.Rdat")
-
-
 # Approximation method:
 NB.values.s <- 100
 

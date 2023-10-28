@@ -1,6 +1,5 @@
 #===============================================================================
-# This program builds a big data.frame object, called DATA,
-#   with all data at the monthly frequency
+# This script prepares the dataset.
 #===============================================================================
 
 
@@ -79,14 +78,6 @@ dc.US <- log(macro.data$CONSO.NONDUR.US[indic.first.date:indic.last.date]/
 pi.US<- log(macro.data$GDPDEF.US[indic.first.date:indic.last.date]/
               macro.data$GDPDEF.US[(indic.first.date-1):(indic.last.date-1)])
 
-# roll.wind <- 20
-# rolling.correl <- rep(NaN,length(dy.US))
-# for(t in roll.wind:length(dy.US)){
-#   rolling.correl[t] <- cor(dc.US[(t-roll.wind+1):t],pi.US[(t-roll.wind+1):t])
-# }
-# plot(macro.data$date[indic.first.date:indic.last.date],
-#      rolling.correl,type="l")
-# abline(h=0,col="grey")
 
 par(plt=c(.1,.9,.1,.9))
 plot(macro.data$date[indic.first.date:indic.last.date],dy.US,type="l")

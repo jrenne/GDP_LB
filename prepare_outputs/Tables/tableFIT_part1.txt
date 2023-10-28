@@ -1,18 +1,18 @@
-Mean of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.65&0.83\\
-Mean of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.47&0.83\\
-Mean of inflation $\pi_t$&$\times 10^{2}$&&0.54&0.68\\
+Mean of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.65&0.82\\
+Mean of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.47&0.82\\
+Mean of inflation $\pi_t$&$\times 10^{2}$&&0.54&0.64\\
 Std. dev. of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.57&0.57\\
 Std. dev. of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.48&0.57\\
-Std. dev. of inflation $\pi_t$&$\times 10^{2}$&&0.24&0.19\\
+Std. dev. of inflation $\pi_t$&$\times 10^{2}$&&0.24&0.18\\
 \hline
-Mean of short-term nom. rate&$\times 10^{2}$&&2.32&2.90\\
-Mean of 10-year nom. rate&$\times 10^{2}$&&5.43&4.31\\
-Mean of 30-year nom. rate&$\times 10^{2}$&&5.77&6.30\\
+Mean of short-term nom. rate&$\times 10^{2}$&&2.32&2.72\\
+Mean of 10-year nom. rate&$\times 10^{2}$&&5.43&4.12\\
+Mean of 30-year nom. rate&$\times 10^{2}$&&5.77&6.09\\
 Std. dev. of short-term nom. rate&$\times 10^{2}$&&2.17&2.29\\
-Std. dev. of 10-year nom. rate&$\times 10^{2}$&&2.33&2.09\\
+Std. dev. of 10-year nom. rate&$\times 10^{2}$&&2.33&2.08\\
 Std. dev. of 30-year nom. rate&$\times 10^{2}$&&1.95&1.70\\
 Auto-correl. of short-term nom. rate&&&0.99&0.89\\
 Auto-correl. of 10-year nom. rate&&&0.99&0.97\\
 Auto-correl. of 30-year nom. rate&&&0.98&0.97\\
-Mean of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&2.45&3.40\\
-Std. dev. of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&1.43&1.08\\
+Mean of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&2.45&3.37\\
+Std. dev. of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&1.43&1.11\\

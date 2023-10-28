@@ -1,6 +1,7 @@
 
-# ===================================================================================
-# Estimation of model parameters:
+# ==============================================================================
+# Estimation of model parameters
+# ==============================================================================
 
 # -------- in "Full.Theta" (parameterization of the model),
 #          parameters are organized as follows:

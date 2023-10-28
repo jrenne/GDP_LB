@@ -1,8 +1,8 @@
 
-# ===========================================================
+# ==============================================================================
 # Debt Dynamics
 # Computation of distri of d for different horizons (constant bs)
-# ===========================================================
+# ==============================================================================
 
 # specification of kernel density estimations:
 bw.4.kernel.density <- .001
@@ -17,7 +17,7 @@ max.horizon <-  max.matur + max(horizons.used.4.plots) # number of simulation pe
 ini.debt.to.rolling.GDP <- ini.debt.to.GDP/Model$freq
 
 
-# =============================
+# ==============================================================================
 # Solve the model:
 vec.maturities <- 1:max.matur
 res.prices <- compute.prices(Model,
@@ -47,12 +47,12 @@ for(i.sim in 1:N.sim){
                 sep=""))
   }
   
-  # =============================
+  # ============================================================================
   # Simulate model:
   res.simul <- simul.model.solved(res.prices,T = max.horizon,
                                   nb.of.periods.with.ini.state = max.matur)
   
-  # =================================================
+  # ============================================================================
   # Prepare inputs for "simulate.debt":
   
   # prepare
@@ -122,11 +122,6 @@ for(i.sim in 1:N.sim){
                                     indic.compute.bs = 0,
                                     predefined.bs = rep(fixed.bs,max.horizon))
       
-      #debt.time.series <- res.sim.debt$all.d * res.sim.debt$Rolling.nominal.GDP /
-      #  (Model$freq*res.sim.debt$Nominal.GDP) * (ini.debt.to.GDP / Model$freq) / (res.sim.debt$all.d[max.matur+1])
-      
-      #debt.time.series <- res.sim.debt$all.d
-      
       debt.time.series <- (ini.debt.to.GDP/res.sim.debt$all.d[max.matur+1]) * 
         res.sim.debt$all.d * res.sim.debt$Nominal.GDP / res.sim.debt$Rolling.nominal.GDP
       
@@ -167,6 +162,7 @@ for(i.sim in 1:N.sim){
 
 
 
+# ==============================================================================
 # Distributions of debt-to-GDP ratios:
 
 file <- "Figure_debt_pdf"
@@ -229,6 +225,7 @@ dev.off()
 
 
 
+# ==============================================================================
 # Distributions of debt services:
 
 file <- "Figure_debtservice_pdf"
@@ -342,11 +339,9 @@ dev.off()
 
 
 
-# =====================================
-# =====================================
+# ==============================================================================
 # Tables
-# =====================================
-# =====================================
+# ==============================================================================
 
 # Table with quantiles of debt-to-GDP
 

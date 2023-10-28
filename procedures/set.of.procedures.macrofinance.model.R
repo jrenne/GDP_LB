@@ -281,9 +281,6 @@ compute.prices <- function(Model,
     )
   
   arguments <- c(Model$sigma.nu)
-  # arguments <- c(Model$sigma.nu,
-  #                Model$eta,
-  #                Model$p)
   P_s <- cdf.c.innov(X1,arguments) - cdf.c.innov(X2,arguments)
   
   P_c <- matrix(0,3,3)
@@ -446,14 +443,6 @@ compute.prices <- function(Model,
   
   Chi <- solve(diag(N) - J) %*% J %*% matrix(1,N,1)
   
-  # M_old <- exp(Model$d.bar + Model$sigma.d^2/2) *
-  #   exp(
-  #     matrix(- (1 - Model$phi) * s.bar / lambda.s - Model$phi * values.s / lambda.s,
-  #            nb.values.s,nb.values.s) +
-  #       matrix(1/lambda.s,ncol=1) %*% matrix(values.s,nrow=1)) *
-  #   (matrix(1/Chi,nb.values.s,1) %*% matrix(1 + Chi,1,nb.values.s))
-  
-  
   M <- exp(Model$sigma.d^2/2) *
     exp(matrix(Model$rho.d/lambda,ncol=1) %*% matrix(mu,nrow=1) + Model$rho.d *
           matrix(- (1 - Model$phi) * s.bar / lambda - Model$phi * mu / lambda,N,1) %*% t(vec1) +
@@ -571,20 +560,6 @@ function.Ftildeh <- function(u,w,lambda,mu,P,phi,s.bar,max.h){
   }
   return(all.F)
 }
-
-# function.Ftildeh <- function(u,w,lambda,mu,P,phi,s.bar,max.h){
-#   # u, mu, Lambda are vectors of dimension N x 1.
-#   N <- dim(mu)[1]
-#   vec1 <- matrix(1,N,1)
-#   Theta.tilde <- compute.Theta.tilde(u,w,lambda,mu,P,phi,s.bar)
-#   all.F <- matrix(NaN,max.h,N)
-#   F.h <- vec1
-#   for(h in 1:max.h){
-#     F.h <- Theta.tilde %*% F.h
-#     all.F[h,] <- F.h
-#   }
-#   return(all.F)
-# }
 
 
 

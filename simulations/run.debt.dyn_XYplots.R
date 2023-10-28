@@ -1,8 +1,8 @@
 
-# =========================================
+# ==============================================================================
 # Debt Dynamics
 # Exercise with debt-stabilizing surplus
-# =========================================
+# ==============================================================================
 
 
 # For simulations, the maximum maturity will be the max entry of vector.of.H:
@@ -13,7 +13,7 @@ smoothing.H       <- Model$freq # lag used to measure change in bs
 nb.periods.2.be.removed <- 100 # at the beginning of the sample
 
 
-# =============================
+# ==============================================================================
 # Solve the model:
 vec.maturities <- 1:max.matur
 res.prices <- compute.prices(Model,
@@ -24,12 +24,12 @@ res.prices <- compute.prices(Model,
                              grid.4.S = NaN)
 
 
-# =============================
+# ==============================================================================
 # Compute model-implied moments:
 res.mom.pi.z <- compute.uncond.mom.pi.z(res.prices$Model.solved)
 
 
-# =============================
+# ==============================================================================
 # Simulate model:
 print("")
 print("")
@@ -40,15 +40,13 @@ print("=========================================================================
 res.simul <- simul.model.solved(res.prices,T = nb.periods)
 
 
-# =============================
+# ==============================================================================
 # Look at simulated yields:
 maturity <- min(20,max.matur)
 par(mfrow=c(3,2))
 plot(res.simul$nom.yields[maturity,],type="l",ylim=c(0,.02))
 lines(res.simul$rea.yields[maturity,],col="red")
 lines(res.simul$GDP.yields[maturity,],col="blue")
-#par(new=TRUE)
-#plot(res.simul$sim.z.integer,type="l",col="red",yaxt="n")
 plot(res.simul$sim.nu,type="l",las=1)
 par(new=TRUE)
 plot(res.simul$sim.z.integer,type="l",col="red",xaxt="n",yaxt="n",
@@ -70,7 +68,7 @@ plot(res.simul$sim.y,type="l")
 
 
 
-# =================================================
+# ==============================================================================
 # Prepare inputs for "simulate.debt":
 
 # prepare
@@ -117,17 +115,8 @@ param$matrix <- cbind(
 )
 param$matrix <- param$matrix/sum(param$matrix)
 
-#param$matrix <- matrix(0,max.matur,3)
-#param$matrix[40,] <- c(0,0,1)
 
-# ini.issuances$nom.bonds <- 0*ini.issuances$nom.bonds
-# ini.issuances$rea.bonds <- 0*ini.issuances$rea.bonds
-# ini.issuances$GDP.bonds <- 0*ini.issuances$GDP.bonds
-# ini.issuances$GDP.bonds[40,] <- 1
-# ini.issuances$GDP.bonds <- ini.debt.to.GDP * ini.issuances$GDP.bonds / sum(ini.issuances$GDP.bonds)
-
-
-# =================================================
+# ==============================================================================
 # Simulate debt dynamics:
 
 print("")
@@ -164,10 +153,6 @@ all.H <- NULL
 all.txt.strategy <- NULL
 for(H in vector.of.H){
   for(type.of.bond in c(1,2,3)){
-    # for(weights.nom in vector.of.weights){
-    #   for(weights.rea in vector.of.weights){
-    #     for(weights.GDP in vector.of.weights){
-    #       AUX <- cbind(weights.nom,weights.rea,weights.GDP)
     AUX <- rep(0,3)
     AUX[type.of.bond] <- 1
     weights.nom <- AUX[1]
@@ -216,8 +201,6 @@ for(H in vector.of.H){
       all.sd.bs <- c(all.sd.bs,
                      sd(res.sim.debt$Rolling.bs[(nb.periods.2.be.removed+1):nb.periods],
                         na.rm=TRUE))
-      #        }
-      #      }
     }
   }
 }
@@ -276,8 +259,6 @@ for(jjj in 1:2){# 2 charts are prepared
          pt.bg=c("white","dark grey","black",
                  "white","white","white"), # gives the legend lines the correct color and width
          col="black",
-         #text.width = 2,
-         #cex=1.0,# size of the text
          pch = c(22,22,22,21,21,21),#symbols,
          pt.cex = c(rep(1.5,3),2*sqrt(vector.of.H)/sqrt(mean(vector.of.H))),
          bg="white",
@@ -291,6 +272,7 @@ for(jjj in 1:2){# 2 charts are prepared
 
 
 
+# ==============================================================================
 # Chart with different measures on same Figure
 
 file <- "Figure_4CostRisk"

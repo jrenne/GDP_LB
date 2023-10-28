@@ -1,17 +1,13 @@
 
 y.lim <- c(-0.02,.08)
-#y.lim <- c(-0.02,.04)
 
-area <- "US"
-
-#NB.values.s <- 50
+NB.values.s <- 50
 
 max.matur.4.TS.charts <- 50 # in years
 
 # Multiplier controls the width of shaded areas (in terms of std dev)
 multiplier <- abs(qnorm(.025))
 multiplier <- 1
-
 
 file <- "Figure_avg_curves"
 pdf(file=paste(output.figures.folder,"/",file,".pdf",sep=""),
@@ -71,7 +67,6 @@ lines(vec.maturities.postestim/Model.est$freq,
 lines(vec.maturities.postestim/Model.est$freq,
       res.all.moments$mean.GDP.yields,col="black",lwd=2)
 
-if((area == "US")|is.na(area)){
   vector.of.avg.nom.yds <- c(
     mean(US_yields_q$DTB3,na.rm=TRUE)/100,    
     mean(US_yields_q$SVENY02,na.rm=TRUE)/100,    
@@ -91,10 +86,6 @@ if((area == "US")|is.na(area)){
   )
   points(vec.maturities.4.estimation/Model.est$freq,
          vector.of.avg.rea.yds,pch=19,cex=1.5,lwd=2,col="dark grey")
-}
-
-#col.nom.shaded <- "#EECCEEBB"
-#col.rea.shaded <- "#CCEEEEBB"
 
 if(indic.plot.nominal){
   legend("bottomright", # places a legend at the appropriate place c("Health","Defense"), # puts text in the legend 

@@ -16,11 +16,7 @@ N.multi.pdf <- function(eta,Omega){
 }
 
 
-
-
 # Determine regime and pi(t) (seen as latent), taking into account consumption:
-
-
 estimate.latent.factors <-function(res.prices,
                                    dc.US,dy.US,pi.US,
                                    gdp.forecast.4Q,infl.forecast.4Q,
@@ -254,23 +250,6 @@ compute.uncond.mom.pi.z <- function(Model){
     c(G.E.z_pi,G.E.z_Cov.pi.z),
     cbind(G.E.z_Cov.pi.z,G.E.z_z)
   )
-  
-  # # Computation of Var(nu):
-  # Var.nu <- Model$sigma.nu^2 +
-  #   (1 - Model$p) * (Model$eta * Model$p / (1 - Model$p))^2 +
-  #   Model$p * Model$eta^2
-  # 
-  # # Computation of Var(pi,y,c)
-  # Phi <- matrix(0,3,3)
-  # Phi[1,1] <- Model$psi
-  # Sigma <- diag(3)
-  # Sigma[1,3] <- Model$rho.pi
-  # Sigma[2,3] <- Model$rho.y
-  # vec.Var.pi.y.c <- solve(diag(9) - Phi %x% Phi) %*%
-  #   c(Sigma %*% diag(c(Model$sigma.pi^2,Model$sigma.y^2,Var.nu)) %*% t(Sigma))
-  # Var.pi.y.c <- matrix(vec.Var.pi.y.c,3,3)
-  # stdv.pi.y.c <- sqrt(diag(Var.pi.y.c))
-  # Cor.pi.y.c <- Var.pi.y.c / (matrix(stdv.pi.y.c,ncol=1)%*%matrix(stdv.pi.y.c,nrow=1))
   
   # Computation of Var(pi,y,c)
   aux <- matrix(0,3,1+N)
@@ -567,9 +546,7 @@ compare.target.and.model <- function(Model,
                         res$mean.slope.rea.curve, # slope of real yield curve
                         res$stdv.rea.yield.slope, # stdv of real yield curve
                         res$mean.of.CondVar.nom.yds, # mean of conditional var of nominal yields (2 maturities)
-                        #c(1000,1000), # stdv of conditional var of nominal yields (2 maturities)
                         res$mean.of.CondVar.rea.yds, # mean of condiitonal var of real yields (1 maturity)
-                        #1000,  # stdv of condiitonal var of real yields (1 maturity)
                         res$E.xs, # annualized expected excess return on stocks
                         sqrt(Model$freq) * sqrt(res$V.r.m), # annualized conditional volatility
                         res$E.P.over.D, # average P over D (annualized)

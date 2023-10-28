@@ -1,6 +1,7 @@
 
+# ==============================================================================
 # Sensitivity of yields to consumption surplus
-
+# ==============================================================================
 
 
 names.of.regimes <- c("Low-growth regime",
@@ -12,10 +13,10 @@ Model <- Theta.2.Model(Full.Theta)
 ylim <- c(-.05,.13)
 
 # Approximation method:
-NB.values.s <- 300
-index.min.S <- 50
-index.min.S.4.price_sensitivity <- 50
-index.max.S.4.price_sensitivity <- 295
+# NB.values.s <- 300
+# index.min.S <- 50
+# index.min.S.4.price_sensitivity <- 50
+# index.max.S.4.price_sensitivity <- 295
 
 NB.values.s <- 50
 index.min.S <- 5
@@ -28,7 +29,7 @@ max.matur <- 40 # expressed at the model frequency
 
 matur.shown.curves <- c(4,40)
 
-# =============================
+# ==============================================================================
 # Solve the model:
 vec.maturities <- 1:max.matur
 res.prices <- compute.prices(Model,
@@ -39,7 +40,7 @@ res.prices <- compute.prices(Model,
                              grid.4.S = NaN)
 
 
-# =============================
+# ==============================================================================
 # Compute model-implied moments:
 res.mom.pi.z <- compute.uncond.mom.pi.z(res.prices$Model.solved)
 

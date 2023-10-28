@@ -1,23 +1,6 @@
-# ================================================
+# ==============================================================================
 # Check some model outputs
-# ================================================
-
-# Compute loss function at estimated parameters:
-# Filter <- rep(1,length(Full.Theta))
-# max.criteria <- compute.criteria(Full.Theta,
-#                                  vec.maturities = vec.maturities.4.estimation,
-#                                  nb.values.s = NB.values.s,
-#                                  h.stock = H.stock,
-#                                  curvature = CURVATURE,
-#                                  grid.4.S = NaN,
-#                                  indic.the.ones.used.in.nom.curve = indic.the.ones.used.in.nom.curve,
-#                                  indic.the.ones.used.in.rea.curve = indic.the.ones.used.in.rea.curve,
-#                                  indic.slope.nom.curve = indic.slope.nom.curve,
-#                                  indic.slope.rea.curve = indic.slope.rea.curve,
-#                                  indic.condVar.nom.rate = indic.condVar.nom.rate,
-#                                  indic.condVar.rea.rate = indic.condVar.rea.rate,
-#                                  all.targets,
-#                                  all.weights)
+# ==============================================================================
 
 Filter <- rep(1,length(Full.Theta))
 max.criteria <- compute.criteria(Full.Theta,

@@ -1,19 +1,14 @@
-# =======================================================
-# =======================================================
+# ==============================================================================
 # This script loads pre-specified parameterizations
-# =======================================================
-# =======================================================
+# ==============================================================================
 
 FREQ <- 4 # 4 for quarterly
 
-# =====================
-# Load a saved model:
-
-if((indic.estim==0)|(indic.start.from.last==1)){
+if((indic.estim==0)|(indic.start.from.last==1)){# Load a saved model
   FILE <- paste(getwd(),"/estimation/results/",result.file,".Rdat",sep="")
   load(FILE) # Loads estimated Full.Theta
   Model <- Theta.2.Model(Full.Theta)
-}else{
+}else{# Start from scratch
   Model <- list()
   Model$sigma.nu <- .005419973
   Model$phi      <- .9765
