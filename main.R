@@ -34,7 +34,7 @@ indic.debt.simulations <- 0
 weight.historical.fit <- .5 # if >0, then the goodness of fit is taken into account
 # Numerical optimization settings (see in run.aux.estim.R for details):
 nb.loops      <- 6
-nb.sub.loops  <- 1
+nb.sub.loops  <- 2
 mult.fact     <- 1
 MAXIT.NM      <- 30
 MAXIT.nlminb  <- 4
@@ -143,9 +143,14 @@ source('estimation/show.outputs.R')
 if(indic.produce.Latex.outputs == 1){
   
   # Table with model parameters:
+  print("--- Preparing tables ---")
   source('prepare_outputs/make.tables.R')
   
+  # Table with fit of yields:
+  source('prepare_outputs/make.table.yds.fit.R')
+
   # Chart showing average yield curves:
+  print("--- Preparing figures with yield curves ---")
   indic.plot.nominal <- 1
   source('prepare_outputs/chart.curves.R')
 
@@ -156,7 +161,12 @@ if(indic.produce.Latex.outputs == 1){
   source('prepare_outputs/chart.distri.IR.R')
   
   # Chart showing historical fit:
+  print("--- Preparing figure showing historical fit ---")
   source('prepare_outputs/chart.historical.fit.R')
+  
+  # Chart showing excess return regressions:
+  print("--- Preparing figure and table illustrating excess return regressions ---")
+  source('prepare_outputs/CS_regressions.R')
 }
 # ==============================================================================
 
@@ -184,12 +194,10 @@ if(indic.debt.simulations == 1){
   vector.of.H           <- c(4,40) # Maturites of issued bonds -- expressed at the model frequency
   horizons.used.4.plots <- c(8,80) # Horizons considered, expressed in number of model periods
   
-  N.sim <- 10000 # number of simulations
+  N.sim <- 20000 # number of simulations
   #N.sim <- 200 # number of simulations
   
   source('simulations/run.debt.dyn_PDFs.R')
-  
-  stop()
   
   # ----------------------------------------------------------------------------
   # Run script computing Risk measures (Cost/Risk plots):
@@ -200,7 +208,7 @@ if(indic.debt.simulations == 1){
   vector.of.H       <- c(4,20,40) # maturities of considered bonds -- expressed at the model frequency
   vector.of.weights <- 0:1 # relative importances of Nom/ILB/GDP-LB
   
-  nb.periods <- 40000 # number of simulated periods
+  nb.periods <- 50000 # number of simulated periods
   #nb.periods <- 1000 # number of simulated periods
   
   ini.debt.to.GDP <- 400 # expressed in GDP percent. Caution: GDP is nominal GDP for one model period

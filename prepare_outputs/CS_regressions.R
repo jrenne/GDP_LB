@@ -186,8 +186,6 @@ Data_Shiller$D.real <- Data_Shiller$D/Data_Shiller$CPI
 Data_Shiller$return <- NaN
 Data_Shiller$return[2:T] <- log((Data_Shiller$P.real + Data_Shiller$D.real/12)[2:T]/
                                   Data_Shiller$P.real[1:(T-1)])
-print(mean(12*Data_Shiller$return,na.rm=TRUE))
-print(mean(12*Data_Shiller$return - Data_Shiller$rf/100,na.rm=TRUE))
 
 Data_Shiller$xs_return <- Data_Shiller$return - Data_Shiller$rf/1200
 

@@ -1,39 +1,39 @@
-Mean of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.65&0.82\\
-Mean of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.47&0.82\\
-Mean of inflation $\pi_t$&$\times 10^{2}$&&0.54&0.64\\
-Std. dev. of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.57&0.57\\
-Std. dev. of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.48&0.57\\
-Std. dev. of inflation $\pi_t$&$\times 10^{2}$&&0.24&0.18\\
+Mean of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.65&0.80\\
+Mean of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.47&0.80\\
+Mean of inflation $\pi_t$&$\times 10^{2}$&&0.54&0.65\\
+Std. dev. of GDP growth rate $\Delta y_t$&$\times 10^{2}$&&0.57&0.59\\
+Std. dev. of consumption growth rate $\Delta c_t$&$\times 10^{2}$&&0.48&0.56\\
+Std. dev. of inflation $\pi_t$&$\times 10^{2}$&&0.24&0.29\\
 \hline
-Mean of short-term nom. rate&$\times 10^{2}$&&2.32&2.72\\
+Mean of short-term nom. rate&$\times 10^{2}$&&2.32&2.78\\
 Mean of 10-year nom. rate&$\times 10^{2}$&&5.43&4.12\\
-Mean of 30-year nom. rate&$\times 10^{2}$&&5.77&6.09\\
-Std. dev. of short-term nom. rate&$\times 10^{2}$&&2.17&2.29\\
+Mean of 30-year nom. rate&$\times 10^{2}$&&5.77&6.01\\
+Std. dev. of short-term nom. rate&$\times 10^{2}$&&2.17&2.26\\
 Std. dev. of 10-year nom. rate&$\times 10^{2}$&&2.33&2.08\\
-Std. dev. of 30-year nom. rate&$\times 10^{2}$&&1.95&1.70\\
-Auto-correl. of short-term nom. rate&&&0.99&0.89\\
-Auto-correl. of 10-year nom. rate&&&0.99&0.97\\
-Auto-correl. of 30-year nom. rate&&&0.98&0.97\\
-Mean of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&2.45&3.37\\
-Std. dev. of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&1.43&1.11\\
+Std. dev. of 30-year nom. rate&$\times 10^{2}$&&1.95&1.72\\
+Auto-correl. of short-term nom. rate&&&0.99&0.91\\
+Auto-correl. of 10-year nom. rate&&&0.99&0.98\\
+Auto-correl. of 30-year nom. rate&&&0.98&0.98\\
+Mean of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&2.45&3.23\\
+Std. dev. of slope of the nom. yd curve (3m-30yrs)&$\times 10^{2}$&&1.43&0.96\\
 \hline
-Mean of short-term real rate&$\times 10^{2}$&&0.14&0.17\\
-Mean of 2-year real rate&$\times 10^{2}$&&0.08&0.47\\
-Mean of 10-year real rate&$\times 10^{2}$&&1.67&1.77\\
-Std. dev. of short-term real rate&$\times 10^{2}$&&1.95&2.29\\
-Std. dev. of 2-year real rate&$\times 10^{2}$&&1.36&2.13\\
+Mean of short-term real rate&$\times 10^{2}$&&0.14&0.20\\
+Mean of 2-year real rate&$\times 10^{2}$&&0.08&0.50\\
+Mean of 10-year real rate&$\times 10^{2}$&&1.67&1.75\\
+Std. dev. of short-term real rate&$\times 10^{2}$&&1.95&2.26\\
+Std. dev. of 2-year real rate&$\times 10^{2}$&&1.36&2.15\\
 Std. dev. of 10-year real rate&$\times 10^{2}$&&1.29&2.08\\
-Auto-correl. of short-term real rate&&&0.81&0.91\\
+Auto-correl. of short-term real rate&&&0.81&0.92\\
 Auto-correl. of 2-year real rate&&&0.86&0.97\\
 Auto-correl. of 10-year real rate&&&0.98&0.98\\
-Mean of slope of the real yd curve (3m-10yrs)&$\times 10^{2}$&&2.01&1.40\\
-Std. dev. of slope of the real yd curve (3m-10yrs)&$\times 10^{2}$&&1.25&0.88\\
+Mean of slope of the real yd curve (3m-10yrs)&$\times 10^{2}$&&2.01&1.34\\
+Std. dev. of slope of the real yd curve (3m-10yrs)&$\times 10^{2}$&&1.25&0.73\\
 \hline
-Mean of condi. var. of the short-term nom. rate&$\times 10^{5}$&&1.39&8.41\\
-Mean of condi. var. of the 30-year nom. rate&$\times 10^{5}$&&2.22&1.56\\
-Mean of condi. var. of the 10-year real rate&$\times 10^{5}$&&1.33&3.15\\
+Mean of condi. var. of the short-term nom. rate&$\times 10^{5}$&&1.39&6.19\\
+Mean of condi. var. of the 30-year nom. rate&$\times 10^{5}$&&2.22&1.40\\
+Mean of condi. var. of the 10-year real rate&$\times 10^{5}$&&1.33&2.94\\
 \hline
-Average expected excess return (annualized)&$\times 10^{2}$&&7.78&7.20\\
-Average cond. volat. of stock return (annualized)&$\times 10^{2}$&&15.69&21.24\\
-Average P/D&&&40.93&44.06\\
-Std. dev. of P/D&&&17.32&15.46\\
+Average expected excess return (annualized)&$\times 10^{2}$&&7.78&7.03\\
+Average cond. volat. of stock return (annualized)&$\times 10^{2}$&&15.69&20.92\\
+Average P/D&&&40.93&43.91\\
+Std. dev. of P/D&&&17.32&15.30\\
