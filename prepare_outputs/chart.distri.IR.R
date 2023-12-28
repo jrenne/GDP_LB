@@ -16,7 +16,7 @@ max.matur <- 40 # expressed at the model frequency
 
 vector.of.maturities.4 <- c(8,40)
 
-x.axis <- c(-.05,.10)
+x.axis <- c(-.05,.15)
 
 # ==============================================================================
 # Solve the model:
@@ -46,37 +46,47 @@ par(plt=c(.1,.95,.23,.85))
 for(j in 1:3){# Loop on regimes
   
   for(maturity in vector.of.maturities.4){
-    adj <- res.prices$all.GDP.bond.yields[maturity,(index.min.S+1):NB.values.s] -
-      res.prices$all.GDP.bond.yields[maturity,(index.min.S):(NB.values.s-1)]
-    adj <- -1/adj
+    
+    # adj <- res.prices$all.GDP.bond.yields[maturity,(index.min.S+1):NB.values.s] -
+    #   res.prices$all.GDP.bond.yields[maturity,(index.min.S):(NB.values.s-1)]
+    # adj <- -1/adj
+    
+    adj <- res.prices$all.rea.bond.yields[maturity,((j-1)*NB.values.s + index.min.S+1):
+                                            (j*NB.values.s)] -
+      res.prices$all.rea.bond.yields[maturity,((j-1)*NB.values.s + index.min.S):
+                                       (j*NB.values.s - 1)]
+    adj <- -2/adj
+    
+    Ez <- res.mom.pi.z$E.z[((j-1)*NB.values.s + index.min.S+1):
+                             (j*NB.values.s)]
+    
+    ylim <- c(0,1.1*max(adj*Ez))
+    
     plot(res.prices$all.GDP.bond.yields[maturity,(index.min.S+1):NB.values.s],
          pmax(res.mom.pi.z$E.z[(index.min.S+1):NB.values.s]*adj,0),
          type="l",lwd=1,las=1,
          xlab="Annualized yield to maturity",
          ylab="",
-         yaxt="n",
+         #yaxt="n",
          col="white",
          xlim=x.axis,
-         ylim = c(0,12),
+         ylim = ylim,
          main=paste(names.of.regimes[j],", maturity: ",toString(maturity/FREQ),ifelse(maturity<=4," year"," years"),sep="")
     )
     
-    adj <- res.prices$all.rea.bond.yields[maturity,(index.min.S+1):NB.values.s] -
-      res.prices$all.rea.bond.yields[maturity,(index.min.S):(NB.values.s-1)]
-    adj <- -1/adj
-    
-    Ez <- res.mom.pi.z$E.z[((j-1)*NB.values.s + index.min.S+1):
-                             (j*NB.values.s)]
-    
-    polygon(c(res.prices$all.rea.bond.yields[maturity,(index.min.S+1):NB.values.s],
-              res.prices$all.rea.bond.yields[maturity,NB.values.s:(index.min.S+1)]),
+    polygon(c(res.prices$all.rea.bond.yields[maturity,((j-1)*NB.values.s + index.min.S+1):
+                                               (j*NB.values.s)],
+              res.prices$all.rea.bond.yields[maturity,(j*NB.values.s):((j-1)*NB.values.s + index.min.S+1)]),
             c(adj*Ez,0*Ez),
             col=rgb(0,0,0,alpha=0.2),border=NA)
     
-    adj <- res.prices$all.GDP.bond.yields[maturity,(index.min.S+1):NB.values.s] -
-      res.prices$all.GDP.bond.yields[maturity,(index.min.S):(NB.values.s-1)]
-    adj <- -1/adj
-    lines(res.prices$all.GDP.bond.yields[maturity,(index.min.S+1):NB.values.s],
+    adj <- res.prices$all.GDP.bond.yields[maturity,((j-1)*NB.values.s + index.min.S+1):
+                                            (j*NB.values.s)] -
+      res.prices$all.GDP.bond.yields[maturity,((j-1)*NB.values.s + index.min.S):
+                                       (j*NB.values.s - 1)]
+    adj <- -2/adj
+    lines(res.prices$all.GDP.bond.yields[maturity,((j-1)*NB.values.s + index.min.S+1):
+                                           (j*NB.values.s)],
           pmax(Ez*adj,0),
           col="black",
           lwd=1)

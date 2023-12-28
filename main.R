@@ -5,7 +5,7 @@
 #
 # Sarah Mouabbi, Jean-Paul Renne, Jean-Guillaume Sahuc
 # 
-# This version: November 2023.
+# This version: December 2023.
 # ==============================================================================
 
 
@@ -59,6 +59,7 @@ library(stringr)
 library(expm)
 library(tseries)
 library(tikzDevice)
+library(sandwich)
 
 # Load procedures:
 source('procedures/set.of.procedures.macrofinance.model.R')
@@ -155,9 +156,11 @@ if(indic.produce.Latex.outputs == 1){
   source('prepare_outputs/chart.curves.R')
 
   # Chart showing sensitivity of yields to consumption surplus:
+  print("--- Preparing figure showing link between s and yields ---")
   source('prepare_outputs/chart.sensitivity.R')
 
   # Chart showing interest rate distributions:
+  print("--- Preparing figure with interest rates distributions ---")
   source('prepare_outputs/chart.distri.IR.R')
   
   # Chart showing historical fit:
@@ -165,7 +168,7 @@ if(indic.produce.Latex.outputs == 1){
   source('prepare_outputs/chart.historical.fit.R')
   
   # Chart showing excess return regressions:
-  print("--- Preparing figure and table illustrating excess return regressions ---")
+  print("--- Preparing figure and table illustrating excess-return regressions ---")
   source('prepare_outputs/CS_regressions.R')
 }
 # ==============================================================================

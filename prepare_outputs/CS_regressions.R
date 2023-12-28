@@ -144,7 +144,7 @@ legend("bottomright", # places a legend at the appropriate place c("Health","Def
        c("Data","Model"),
        lty=c(1), # gives the legend appropriate symbols (lines)       
        lwd=c(2), # line width
-       col=c("black"), # gives the legend lines the correct color and width
+       col=c("dark grey","black"), # gives the legend lines the correct color and width
        #pt.bg=c(NaN,"blue",NaN),
        #text.width = 2,
        #cex=1.0,# size of the text
