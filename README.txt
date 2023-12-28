@@ -3,13 +3,15 @@
 Debt-Stabilizing Properties of GDP-Linked Securities: A Macro-Finance Perspective
 
 Sarah Mouabbi, Jean-Paul Renne, Jean-Guillaume Sahuc
+
+December 2023
 ================================================================================
 
 
 The codes attached to this present README file allow to replicate results from the above-cited paper.
 
 
------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 A - Requirements
 
@@ -21,7 +23,7 @@ To use the codes, run "main.R."
 Note that some libraries are required to generate the different results. Make sure the libraries called in "main.R" are available before running the codes.
 
 
------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 B - The different folders
 
@@ -40,7 +42,7 @@ The different folders are as follows:
 In addition to the present README file, the main folder also contains two files "main.R" that has to be sourced in order to replicate the paper's results.
 
 
------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 C - Outputs
 
